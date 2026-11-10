@@ -122,79 +122,86 @@
     overflow:hidden;
     touch-action:pan-y;
     user-select:none;
+    padding:0;
+    margin:0;
   }
-  .viewport { position:absolute; inset:0; }
+  .viewport { position:absolute; inset:0; padding:0; margin:0; }
   .slide {
     position:absolute; inset:0;
     opacity:0; transition:opacity .28s ease;
-    display:flex; align-items:center; justify-content:center;
+    display:block;
     pointer-events:none;
+    padding:0; margin:0;
   }
   .slide.active { opacity:1; pointer-events:auto; }
   .slide img {
-    width:100%; height:100%; object-fit:cover;
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
     cursor:zoom-in;
+    padding:0; margin:0; border:0;
   }
   .nav, .zoom {
     position:absolute;
-    border:1px solid rgba(57,255,20,.55);
-    background:rgba(5,7,5,.78);
-    color:var(--neon);
-    backdrop-filter:blur(8px);
+    border:0;
+    background:rgba(5,7,5,.42);
+    color:rgba(232,255,232,.85);
     cursor:pointer;
-    box-shadow:0 0 14px rgba(57,255,20,.28);
-    transition:background .2s ease, color .2s ease, box-shadow .2s ease;
+    box-shadow:none;
+    transition:background .2s ease, color .2s ease, opacity .2s ease;
     z-index:3;
   }
   .nav {
     top:50%; transform:translateY(-50%);
-    width:2.75rem; height:2.75rem;
+    width:30px; height:30px;
+    min-width:30px; min-height:30px;
+    padding:0;
+    margin:0;
     border-radius:999px;
-    font-size:1.85rem;
+    font-size:18px;
     line-height:1;
     display:flex; align-items:center; justify-content:center;
+    opacity:.72;
   }
   .nav:hover, .zoom:hover {
-    background:rgba(57,255,20,.22);
+    background:rgba(5,7,5,.68);
     color:#fff;
-    box-shadow:0 0 12px rgba(57,255,20,.45), 0 0 28px rgba(57,255,20,.2);
+    opacity:1;
   }
-  .nav.prev { left:.65rem; }
-  .nav.next { right:.65rem; }
+  .nav.prev { left:6px; }
+  .nav.next { right:6px; }
   .zoom {
     right:.7rem; bottom:.7rem;
     width:2.2rem; height:2.2rem;
     border-radius:10px;
     font-size:1rem;
+    border:1px solid rgba(57,255,20,.55);
+    background:rgba(5,7,5,.78);
+    color:var(--neon);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 14px rgba(57,255,20,.28);
+  }
+  .zoom:hover {
+    background:rgba(57,255,20,.22);
+    color:#fff;
+    box-shadow:0 0 12px rgba(57,255,20,.45), 0 0 28px rgba(57,255,20,.2);
   }
   .photo-count {
     position:absolute;
-    left:.7rem; bottom:.7rem;
+    left:8px; bottom:8px;
     z-index:3;
-    padding:.28rem .55rem;
+    padding:.18rem .42rem;
     border-radius:999px;
-    background:rgba(5,7,5,.78);
-    border:1px solid rgba(57,255,20,.45);
-    color:var(--neon);
+    background:rgba(5,7,5,.5);
+    border:0;
+    color:rgba(232,255,232,.8);
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.72rem;
+    font-size:.65rem;
     letter-spacing:.06em;
-    box-shadow:0 0 12px rgba(57,255,20,.2);
-  }
-  .dots {
-    position:absolute; left:0; right:0; bottom:.7rem;
-    display:flex; justify-content:center; gap:.4rem;
+    box-shadow:none;
     pointer-events:none;
-    z-index:2;
   }
-  .carousel[data-count]:not([data-count="1"]) .dots { bottom:2.4rem; }
-  .dot {
-    pointer-events:auto;
-    width:.55rem; height:.55rem; border-radius:999px;
-    border:0; background:rgba(57,255,20,.35); cursor:pointer; padding:0;
-    box-shadow:0 0 6px rgba(57,255,20,.3);
-  }
-  .dot.active { background:var(--neon); width:1.1rem; box-shadow:0 0 10px var(--neon); }
   .body {
     padding:1.15rem 1.2rem 1.25rem;
     display:flex; flex-direction:column; gap:.75rem; flex:1;
@@ -306,7 +313,7 @@
     font-family: Orbitron, Rajdhani, sans-serif; letter-spacing:.04em;
   }
   @media (max-width:719px) {
-    .nav { width:3rem; height:3rem; font-size:2rem; }
+    .nav { width:32px; height:32px; min-width:32px; min-height:32px; font-size:18px; }
     .book { min-height:3.15rem; padding:0 1.15rem; }
   }
 </style>
@@ -344,26 +351,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -398,26 +385,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -452,26 +419,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -503,23 +450,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/17</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -554,26 +484,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -608,26 +518,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -661,25 +551,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/19</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -706,18 +577,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/12</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -750,24 +609,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/18</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -795,19 +636,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/13</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -836,20 +664,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/14</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -884,26 +698,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/20</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button>
-<button type="button" class="dot" aria-label="Photo 20" data-index="19"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
@@ -937,25 +731,6 @@
         <button type="button" class="nav prev" aria-label="Previous photo">‹</button>
         <button type="button" class="nav next" aria-label="Next photo">›</button>
         <div class="photo-count" aria-live="polite"><span class="cur">1</span>/19</div>
-        <div class="dots"><button type="button" class="dot active" aria-label="Photo 1" data-index="0"></button>
-<button type="button" class="dot" aria-label="Photo 2" data-index="1"></button>
-<button type="button" class="dot" aria-label="Photo 3" data-index="2"></button>
-<button type="button" class="dot" aria-label="Photo 4" data-index="3"></button>
-<button type="button" class="dot" aria-label="Photo 5" data-index="4"></button>
-<button type="button" class="dot" aria-label="Photo 6" data-index="5"></button>
-<button type="button" class="dot" aria-label="Photo 7" data-index="6"></button>
-<button type="button" class="dot" aria-label="Photo 8" data-index="7"></button>
-<button type="button" class="dot" aria-label="Photo 9" data-index="8"></button>
-<button type="button" class="dot" aria-label="Photo 10" data-index="9"></button>
-<button type="button" class="dot" aria-label="Photo 11" data-index="10"></button>
-<button type="button" class="dot" aria-label="Photo 12" data-index="11"></button>
-<button type="button" class="dot" aria-label="Photo 13" data-index="12"></button>
-<button type="button" class="dot" aria-label="Photo 14" data-index="13"></button>
-<button type="button" class="dot" aria-label="Photo 15" data-index="14"></button>
-<button type="button" class="dot" aria-label="Photo 16" data-index="15"></button>
-<button type="button" class="dot" aria-label="Photo 17" data-index="16"></button>
-<button type="button" class="dot" aria-label="Photo 18" data-index="17"></button>
-<button type="button" class="dot" aria-label="Photo 19" data-index="18"></button></div>
         <button type="button" class="zoom" aria-label="Open photo gallery">⤢</button>
       </div>
       <div class="body">
