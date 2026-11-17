@@ -510,7 +510,6 @@
       const id = String(r.listingId || '');
       const name = NAMES[id] || r.vehicleName || 'Fleet vehicle';
       const img = r.photo || (id ? ('images/' + id + '_1.jpg') : '');
-      const who = r.reviewerFirstName || r.reviewer || 'Guest';
       const firstName = String(r.reviewerFirstName || '').trim();
       const when = formatDate(r.date);
       return (
@@ -524,7 +523,6 @@
           '<div class="review-body">' +
             '<div class="review-meta">' +
               '<span class="review-vehicle">' + escapeHtml(name) + '</span>' +
-              '<span>' + escapeHtml(who) + '</span>' +
             '</div>' +
             reviewTextHtml(r.text, firstName, when) +
           '</div>' +
