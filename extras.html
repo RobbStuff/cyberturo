@@ -211,30 +211,38 @@
     color:var(--cyan);
   }
   .extras-grid {
+    --extra-tile-w: 10rem;
+    --extra-tile-pad-x: .55rem;
+    --extra-tile-pad-y: .4rem;
+    --extra-name-size: .72rem;
+    --extra-price-size: .62rem;
+    --extra-gap: .45rem;
     display:grid;
-    grid-template-columns:repeat(4, minmax(0, 1fr));
-    gap:.45rem;
+    grid-template-columns:repeat(2, var(--extra-tile-w));
+    gap:var(--extra-gap);
+    justify-content:center;
+    justify-items:center;
     align-items:stretch;
   }
-  @media (min-width:768px) {
-    .extras-grid { grid-template-columns:repeat(7, minmax(0, 1fr)); }
+  @media (min-width:768px) and (max-width:1199px) {
+    .extras-grid { grid-template-columns:repeat(6, var(--extra-tile-w)); }
   }
   @media (min-width:1200px) {
-    .extras-grid { grid-template-columns:repeat(10, minmax(0, 1fr)); }
+    .extras-grid { grid-template-columns:repeat(4, var(--extra-tile-w)); }
   }
   .extra-tile {
     position:relative;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:flex-start;
-    gap:.2rem;
-    width:100%;
-    min-height:68px;
-    max-width:90px;
-    margin:0 auto;
-    aspect-ratio:1 / 1;
-    padding:.4rem .28rem .35rem;
+    justify-content:center;
+    gap:.18rem;
+    box-sizing:border-box;
+    width:var(--extra-tile-w);
+    min-width:var(--extra-tile-w);
+    max-width:var(--extra-tile-w);
+    margin:0;
+    padding:var(--extra-tile-pad-y) var(--extra-tile-pad-x);
     border-radius:12px;
     border:1px solid rgba(57,255,20,.2);
     background:rgba(57,255,20,.04);
@@ -255,52 +263,27 @@
     border-color:rgba(255,140,26,.65);
     box-shadow:0 0 12px rgba(255,140,26,.18);
   }
-  .extra-icon {
-    flex:0 0 auto;
-    width:.95rem;
-    height:.95rem;
-    color:var(--neon);
-    filter:drop-shadow(0 0 5px rgba(57,255,20,.4));
-  }
-  .extra-icon svg {
-    display:block;
-    width:100%;
-    height:100%;
-  }
   .extra-name {
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:3;
-    overflow:hidden;
     margin:0;
+    width:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:clip;
     font-weight:700;
-    font-size:.68rem;
+    font-size:var(--extra-name-size);
     line-height:1.15;
     letter-spacing:.01em;
     color:#efffef;
-    word-break:break-word;
   }
   .extra-price {
     margin:0;
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.58rem;
+    font-size:var(--extra-price-size);
     font-weight:700;
     letter-spacing:.03em;
     color:#ff8c1a;
     line-height:1.2;
-  }
-  .extra-chev {
-    position:absolute;
-    right:.18rem;
-    bottom:.1rem;
-    font-size:.7rem;
-    line-height:1;
-    color:var(--muted);
-    transition:transform .2s ease, color .2s ease;
-  }
-  .extra-tile.is-open .extra-chev {
-    color:#ff8c1a;
-    transform:rotate(90deg);
+    white-space:nowrap;
   }
   .extra-detail {
     grid-column:1 / -1;
@@ -404,50 +387,6 @@
     return money + (unit ? (' ' + unit) : '');
   }
 
-  // Extensible keyword → icon key mapping (first match wins; add rows as needed).
-  const EXTRA_ICON_RULES = [
-    { keys: ['charging', 'ev', 'supercharge', 'supercharger'], icon: 'bolt' },
-    { keys: ['toll', 'road'], icon: 'toll' },
-    { keys: ['cooler'], icon: 'cooler' },
-    { keys: ['beach', 'umbrella', 'chair'], icon: 'umbrella' },
-    { keys: ['stroller', 'child', 'car seat', 'carseat'], icon: 'baby' },
-    { keys: ['pet'], icon: 'paw' },
-    { keys: ['prepaid', 'refuel', 'clean'], icon: 'sparkle' },
-    { keys: ['delivery', 'airport'], icon: 'plane' },
-    { keys: ['unlimited miles', 'unlimited'], icon: 'infinity' },
-    { keys: ['phone', 'charger', 'cable'], icon: 'plug' },
-    { keys: ['camping'], icon: 'tent' },
-  ];
-
-  const EXTRA_ICONS = {
-    bolt: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l1-7z"/></svg>',
-    toll: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M5 9v6"/><path d="M19 9v6"/><path d="M9 10.5c.8-.8 1.7-1.2 3-1.2s2.2.4 3 1.2"/><path d="M9 13.5c.8.8 1.7 1.2 3 1.2s2.2-.4 3-1.2"/></svg>',
-    cooler: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M4 12h16"/></svg>',
-    umbrella: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-5 0-9 3-9 7h18c0-4-4-7-9-7z"/><path d="M12 10v9a2 2 0 0 0 4 0"/></svg>',
-    baby: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M7 21v-2a5 5 0 0 1 10 0v2"/><path d="M5 14h14"/></svg>',
-    paw: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="5.5" cy="9" r="2"/><circle cx="18.5" cy="9" r="2"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="5" r="2"/><path d="M12 13c-2.8 0-5 2-5 4.4 0 1.6 1.4 2.6 3.2 2.6.9 0 1.5-.3 1.8-.3s.9.3 1.8.3c1.8 0 3.2-1 3.2-2.6 0-2.4-2.2-4.4-5-4.4z"/></svg>',
-    sparkle: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/><path d="m6 6 2.5 2.5"/><path d="m15.5 15.5 2.5 2.5"/><path d="m18 6-2.5 2.5"/><path d="m8.5 15.5-2.5 2.5"/></svg>',
-    plane: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15 3.5 17.5 5 13l9-4.5L21 3l-2 9.5L14 19l-1.5-3.5"/><path d="m14 19 1 3"/></svg>',
-    infinity: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12c0-2.2 1.8-4 4-2.5 1.3.9 1.7 2 2.5 2.5 2.2 1.5 4-.3 4-2.5s-1.8-4-4-2.5c-.8.5-1.2 1.6-2.5 2.5C8.8 16 7 14.2 7 12z"/></svg>',
-    plug: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7v5"/><path d="M15 7v5"/><path d="M7 12h10"/><path d="M12 12v7"/><path d="M9 21h6"/></svg>',
-    tent: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 4 9 16H3L12 4z"/><path d="M12 4v16"/></svg>',
-    tag: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 12l9 9 9-9-9-9z"/><path d="m12 3 3 3"/><circle cx="8.5" cy="8.5" r="1"/></svg>'
-  };
-
-  function iconForExtraName(name) {
-    const hay = String(name || '').toLowerCase();
-    for (const rule of EXTRA_ICON_RULES) {
-      if (rule.keys.some((k) => hay.includes(k))) return rule.icon;
-    }
-    return 'tag';
-  }
-
-  function extraIconHtml(name) {
-    const key = iconForExtraName(name);
-    const svg = EXTRA_ICONS[key] || EXTRA_ICONS.tag;
-    return '<span class="extra-icon" aria-hidden="true">' + svg + '</span>';
-  }
-
   function showGlobalPlaceholder(message) {
     document.getElementById('extras-root').innerHTML =
       '<div class="placeholder">' +
@@ -501,6 +440,107 @@
     else grid.appendChild(panel);
   }
 
+  function measureTitleWidth(titles, fontSizePx, fontWeight, fontFamily, letterSpacing) {
+    const probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;left:-9999px;top:0;white-space:nowrap;visibility:hidden;';
+    probe.style.fontSize = fontSizePx + 'px';
+    probe.style.fontWeight = fontWeight;
+    probe.style.fontFamily = fontFamily;
+    probe.style.letterSpacing = letterSpacing;
+    document.body.appendChild(probe);
+    let max = 0;
+    titles.forEach((t) => {
+      probe.textContent = t;
+      max = Math.max(max, probe.getBoundingClientRect().width);
+    });
+    probe.remove();
+    return max;
+  }
+
+  function colsForViewport() {
+    const w = window.innerWidth;
+    if (w >= 1200) return 4;
+    if (w >= 768) return 6;
+    return 2;
+  }
+
+  function sizeExtraTiles() {
+    const grids = [...document.querySelectorAll('.extras-grid')];
+    if (!grids.length) return;
+    const titles = [...document.querySelectorAll('.extra-tile .extra-name')]
+      .map((el) => el.textContent.trim())
+      .filter(Boolean);
+    if (!titles.length) return;
+
+    const sample = grids[0];
+    // Reset to comfortable defaults, then shrink on tablet if needed.
+    let nameSize = 0.72; // rem
+    let priceSize = 0.62;
+    let padX = 0.55;
+    let padY = 0.4;
+    const gap = 0.45;
+
+    function applyVars() {
+      document.querySelectorAll('.extras-grid').forEach((grid) => {
+        grid.style.setProperty('--extra-name-size', nameSize + 'rem');
+        grid.style.setProperty('--extra-price-size', priceSize + 'rem');
+        grid.style.setProperty('--extra-tile-pad-x', padX + 'rem');
+        grid.style.setProperty('--extra-tile-pad-y', padY + 'rem');
+        grid.style.setProperty('--extra-gap', gap + 'rem');
+      });
+    }
+
+    function remPx() {
+      return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    }
+
+    function computeWidth() {
+      applyVars();
+      const rem = remPx();
+      const nameEl = sample.querySelector('.extra-name');
+      const cs = nameEl ? getComputedStyle(nameEl) : getComputedStyle(sample);
+      const titleW = measureTitleWidth(
+        titles,
+        nameSize * rem,
+        cs.fontWeight || '700',
+        cs.fontFamily || 'Rajdhani, sans-serif',
+        cs.letterSpacing || '0.01em'
+      );
+      // horizontal padding + title + 1px borders
+      return titleW + padX * 2 * rem + 2;
+    }
+
+    let tileW = Math.ceil(computeWidth());
+    const cols = colsForViewport();
+    const parent = sample.parentElement || sample;
+    const parentStyle = getComputedStyle(parent);
+    const avail = Math.max(
+      0,
+      parent.clientWidth
+        - (parseFloat(parentStyle.paddingLeft) || 0)
+        - (parseFloat(parentStyle.paddingRight) || 0)
+    ) || sample.clientWidth || window.innerWidth;
+
+    function rowNeed(w) {
+      return cols * w + (cols - 1) * gap * remPx();
+    }
+
+    // On iPad (6 across), shrink font/padding until the row fits.
+    if (cols === 6 && rowNeed(tileW) > avail) {
+      for (let i = 0; i < 16 && rowNeed(tileW) > avail; i++) {
+        nameSize = Math.round(Math.max(0.5, nameSize - 0.03) * 100) / 100;
+        priceSize = Math.round(Math.max(0.46, priceSize - 0.025) * 100) / 100;
+        padX = Math.round(Math.max(0.25, padX - 0.03) * 100) / 100;
+        padY = Math.round(Math.max(0.25, padY - 0.02) * 100) / 100;
+        tileW = Math.ceil(computeWidth());
+      }
+    }
+
+    document.querySelectorAll('.extras-grid').forEach((grid) => {
+      grid.style.setProperty('--extra-tile-w', tileW + 'px');
+    });
+  }
+
   function render(data) {
     const root = document.getElementById('extras-root');
     const vehicles = Array.isArray(data?.vehicles) ? data.vehicles : [];
@@ -522,10 +562,8 @@
                 ' data-name="' + escapeHtml(e.name || '') + '"' +
                 ' data-price="' + escapeHtml(price) + '"' +
                 ' data-desc="' + encodeURIComponent(desc) + '">' +
-                extraIconHtml(e.name) +
                 '<span class="extra-name">' + escapeHtml(e.name || '') + '</span>' +
                 '<span class="extra-price">' + escapeHtml(price) + '</span>' +
-                '<span class="extra-chev" aria-hidden="true">›</span>' +
               '</button>'
             );
           }).join('') + '</div>')
@@ -547,6 +585,17 @@
         '</article>'
       );
     }).join('');
+
+    const runSize = function() {
+      sizeExtraTiles();
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(runSize).catch(runSize);
+    } else {
+      runSize();
+    }
+    // Remeasure after layout settles.
+    requestAnimationFrame(runSize);
   }
 
   document.getElementById('extras-root').addEventListener('click', function(e) {
@@ -559,8 +608,8 @@
   function onViewportChange() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      // Close open panels so they re-anchor correctly under the new row layout.
       document.querySelectorAll('.vehicle-extras').forEach(closeOpenInCar);
+      sizeExtraTiles();
     }, 100);
   }
   window.addEventListener('resize', onViewportChange);
