@@ -58,53 +58,67 @@
     margin:0 0 1.15rem;
   }
   .jump-nav {
-    display:block;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:.55rem .7rem;
     width:100%;
     margin:0 0 1.15rem;
     padding:0;
-    white-space:nowrap;
-    overflow:visible;
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:clamp(.62rem, 2.4vw, .82rem);
+    font-size:clamp(.72rem, 2.4vw, .88rem);
     font-weight:600;
     letter-spacing:.06em;
     text-transform:uppercase;
     color:var(--muted);
     line-height:1.4;
   }
-  .jump-nav .jump-label { color:var(--muted); margin-right:.15rem; }
-  .jump-nav a {
-    display:inline;
-    padding:0;
-    margin:0;
-    border:0;
-    border-radius:0;
-    background:none;
-    box-shadow:none;
+  .jump-nav .jump-label {
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .jump-nav select {
+    appearance:none;
+    -webkit-appearance:none;
+    min-width:min(12.5rem, 70vw);
+    max-width:100%;
+    min-height:2.6rem;
+    padding:.55rem 2.4rem .55rem .95rem;
+    border-radius:999px;
+    border:1px solid rgba(57,255,20,.45);
+    background-color:rgba(5,7,5,.85);
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--neon) 50%),
+      linear-gradient(135deg, var(--neon) 50%, transparent 50%);
+    background-position:
+      calc(100% - 1.15rem) calc(50% - .15rem),
+      calc(100% - .75rem) calc(50% - .15rem);
+    background-size:.45rem .45rem, .45rem .45rem;
+    background-repeat:no-repeat;
     color:var(--neon);
-    text-decoration:none;
     font:inherit;
     letter-spacing:inherit;
-    text-transform:inherit;
-    white-space:nowrap;
-    transition:color .2s ease, text-shadow .2s ease;
+    text-transform:uppercase;
+    box-shadow:0 0 14px rgba(57,255,20,.16);
+    cursor:pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  .jump-nav .sep {
-    color:var(--muted);
-    margin:0 .35em;
-    font-weight:500;
-  }
-  .jump-nav a:hover,
-  .jump-nav a:focus-visible {
+  .jump-nav select:hover,
+  .jump-nav select:focus-visible {
+    border-color:rgba(57,255,20,.85);
+    background-color:rgba(57,255,20,.1);
     color:#f0fff0;
-    text-shadow:0 0 10px rgba(57,255,20,.55);
+    box-shadow:0 0 18px rgba(57,255,20,.32);
     outline:none;
   }
-  .jump-nav a:focus-visible {
+  .jump-nav select:focus-visible {
     outline:2px solid var(--neon);
-    outline-offset:3px;
-    border-radius:2px;
+    outline-offset:2px;
+  }
+  .jump-nav select option {
+    background:#050705;
+    color:#e8ffe8;
   }
   .card[id] { scroll-margin-top:5.5rem; }
   .menu {
@@ -577,8 +591,13 @@
       </div>
       </div>
       <nav class="jump-nav" aria-label="Jump to vehicle type">
-        <span class="jump-label">Jump to:</span>
-        <a href="#model-y">Model Y</a><span class="sep" aria-hidden="true">·</span><a href="#model-y-l">Model Y L</a><span class="sep" aria-hidden="true">·</span><a href="#cybertruck">Cybertruck</a>
+        <label class="jump-label" for="jump-select">Jump to:</label>
+        <select id="jump-select">
+          <option value="" selected>Choose</option>
+          <option value="model-y">Model Y</option>
+          <option value="model-y-l">Model Y L</option>
+          <option value="cybertruck">Cybertruck</option>
+        </select>
       </nav>
       <h1>Here is our fleet:</h1>
     </header>
@@ -1089,6 +1108,17 @@
         setMenuOpen(false);
         menuBtn.focus();
       }
+    });
+  }
+
+  const jumpSelect = document.getElementById('jump-select');
+  if (jumpSelect) {
+    jumpSelect.addEventListener('change', () => {
+      const id = jumpSelect.value;
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      jumpSelect.value = '';
     });
   }
 
