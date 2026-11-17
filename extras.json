@@ -1,15 +1,70 @@
 {
-  "placeholder": true,
-  "message": "Extras list coming soon",
+  "placeholder": false,
+  "message": null,
   "note": null,
-  "updatedAt": null,
+  "updatedAt": "2026-11-17T15:01:27Z",
   "vehicles": [
     {
       "listingId": "2587824",
       "name": "Merlin",
       "model": "2024 Tesla Cybertruck",
       "photo": "images/2587824_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of Tesla. No need to use key card. Your phone will do EVERYTHING in Tesla app. Download the Tesla app, I add you as an authorized user. Highly Recommended!"
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "On Dash phone mount."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Very large cooler. Perfect for the beach"
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "You Configure: - Rear facing 5-40lbs - Forward facing 22-65lbs - High back booster 40-100lbs Must use the cushion we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$59",
+          "unit": "per trip",
+          "description": "Cybertruck is a huge battery! Save time and make dropoff a breeze by adding this Extra, which allows you to return my car without fully recharging. Please return with at least 20% (minimum) or you will be responsible for an extra fee."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -17,7 +72,62 @@
       "name": "Maverick",
       "model": "2024 Tesla Cybertruck",
       "photo": "images/2740306_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of Tesla. No need to use key card. Your phone will do EVERYTHING in Tesla app. Download the Tesla app, I add you as an authorized user. Highly Recommended!"
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$59",
+          "unit": "per trip",
+          "description": "Cybertruck is a huge battery! Save time and make dropoff a breeze by adding this Extra, which allows you to return my car without fully recharging. Please return with at least 20% (minimum) or you will be responsible for an extra fee."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "You Configure: - Rear facing 5-40lbs - Forward facing 22-65lbs - High back booster 40-100lbs Must use the cushion we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Very large cooler. Perfect for the beach"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "On Dash phone mount"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -25,7 +135,62 @@
       "name": "Casper",
       "model": "2026 Tesla Model Y",
       "photo": "images/3307368_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport"
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -33,7 +198,62 @@
       "name": "Storm",
       "model": "2026 Tesla Model Y",
       "photo": "images/3307383_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -41,7 +261,62 @@
       "name": "Ruby",
       "model": "2026 Tesla Model Y",
       "photo": "images/3307398_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -49,7 +324,62 @@
       "name": "Rooster",
       "model": "2026 Tesla Model Y",
       "photo": "images/3307415_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -57,7 +387,62 @@
       "name": "Frosty",
       "model": "2026 Tesla Model Y",
       "photo": "images/3506536_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": " * STARLINK SATELLITE DISH *  Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe *\n \n Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs\n Forward facing 22-65lbs\n High back & booster 40-100lbs \n \n Must use the mat we provide for under the seat.  You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$39",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport"
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -65,7 +450,62 @@
       "name": "Goose",
       "model": "2026 Tesla Model Y",
       "photo": "images/3531702_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "You Configure: - Rear facing 5-40lbs - Forward facing 22-65lbs - High back booster 40-100lbs Must use the cushion we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and so many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Save time and make dropoff a breeze by adding this Extra, which allows you to return my car without fully recharging. Please return with at least 20% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding and using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap"
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers"
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -73,7 +513,62 @@
       "name": "Blaze",
       "model": "2026 Tesla Model Y",
       "photo": "images/3563398_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -81,7 +576,62 @@
       "name": "Yeti",
       "model": "2026 Tesla Model Y",
       "photo": "images/3595182_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport"
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster sOur booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat eat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -89,7 +639,62 @@
       "name": "Bandit",
       "model": "2026 Tesla Model Y",
       "photo": "images/3619928_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Child safety seat",
+          "price": "$30",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "One-way trip",
+          "price": "$99",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Please return with at least 25% of battery or you will be responsible for an extra $25 charge on top of original charge."
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding and using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap"
+        },
+        {
+          "name": "Booster seat",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers"
+        },
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -97,7 +702,62 @@
       "name": "Cosmo",
       "model": "2027 Tesla Model Y",
       "photo": "images/3943006_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "One-way trip",
+          "price": "$129",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$35",
+          "unit": "per trip",
+          "description": "Save time and make dropoff a breeze by adding this Extra, which allows you to return my car without fully recharging. Please return with at least 30 miles of range."
+        }
+      ],
       "extrasNote": null
     },
     {
@@ -105,7 +765,62 @@
       "name": "Bubba",
       "model": "2027 Tesla Model Y",
       "photo": "images/3959789_1.jpg",
-      "extras": [],
+      "extras": [
+        {
+          "name": "Prepaid EV recharge",
+          "price": "$35",
+          "unit": "per trip",
+          "description": "Save time and make dropoff a breeze by adding this Extra, which allows you to return my car without fully recharging. Please return with at least 30 miles of range."
+        },
+        {
+          "name": "Child safety seat",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Rear facing 5-40lbs Forward facing 22-65lbs High back & booster 40-100lbs Must use the mat we provide for under the seat. You're responsible for correctly installing the safety seat. We supply the seat & instructions only"
+        },
+        {
+          "name": "Portable WiFi hotspot",
+          "price": "$69",
+          "unit": "per trip",
+          "description": "* STARLINK SATELLITE DISH * Unlimited, high speed internet where ever you are! The famous Starlink that everyone has heard about is available for your trip! Price is per week. So if you have a 21 day trip, you would choose 3 for the quantity."
+        },
+        {
+          "name": "One-way trip",
+          "price": "$129",
+          "unit": "per trip",
+          "description": "Going on a cruise? Pick up at the Cruise Port & drop off in Orlando. Or other way around. Or Melbourne airport."
+        },
+        {
+          "name": "Toys & games",
+          "price": "$20",
+          "unit": "per trip",
+          "description": "TESLA APP! This extra will give you FULL access to all the magical features of a Tesla. Birds Eye map (very helpful on pickup), and SO SO many extra features! Highly Recommended!!"
+        },
+        {
+          "name": "Phone mount",
+          "price": "$10",
+          "unit": "per trip",
+          "description": "* Stay Safe * Don\u2019t get a ticket in Florida for holding or using phone! Long Arm Phone Mount To The Left Of Dashboard."
+        },
+        {
+          "name": "Cooler",
+          "price": "$25",
+          "unit": "per trip",
+          "description": "Brand new large family size cooler. Fill with ice, drinks and snacks for a great day at the beach or road trips!"
+        },
+        {
+          "name": "Stroller",
+          "price": "$29",
+          "unit": "per trip",
+          "description": "Brand new high quality, lightweight stroller. 4 recline positions, canopy and visor, storage basket, storage packet, cup holder. Very compact when folded and has carry strap."
+        },
+        {
+          "name": "Booster seat",
+          "price": "$19",
+          "unit": "per trip",
+          "description": "Our booster seat offers a safer and more comfy ride for older kids, bridging the gap between a car seat and a regular seat for growing passengers."
+        }
+      ],
       "extrasNote": null
     }
   ]
