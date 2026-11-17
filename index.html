@@ -48,171 +48,58 @@
     padding:1.4rem 1.2rem 2.6rem;
     position:relative;
   }
-  .top-bar {
-    --brand-size: clamp(2rem, 6.4vw, 3.6rem);
+  .top-nav {
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:.85rem;
-    width:100%;
-    margin:0 0 1.15rem;
-  }
-  .jump-nav {
-    display:flex;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     align-items:center;
     justify-content:center;
-    gap:.55rem .7rem;
+    gap:0;
     width:100%;
-    margin:0 0 1.15rem;
+    margin:0 0 .95rem;
     padding:0;
+    white-space:nowrap;
     font-family: Orbitron, Rajdhani, sans-serif;
     font-size:clamp(.72rem, 2.4vw, .88rem);
     font-weight:600;
     letter-spacing:.06em;
-    text-transform:uppercase;
+    text-transform:none;
     color:var(--muted);
     line-height:1.4;
   }
-  .jump-nav .jump-label {
-    color:var(--muted);
-    white-space:nowrap;
-  }
-  .jump-nav select {
-    appearance:none;
-    -webkit-appearance:none;
-    min-width:min(12.5rem, 70vw);
-    max-width:100%;
-    min-height:2.6rem;
-    padding:.55rem 2.4rem .55rem .95rem;
-    border-radius:999px;
-    border:1px solid rgba(57,255,20,.45);
-    background-color:rgba(5,7,5,.85);
-    background-image:
-      linear-gradient(45deg, transparent 50%, var(--neon) 50%),
-      linear-gradient(135deg, var(--neon) 50%, transparent 50%);
-    background-position:
-      calc(100% - 1.15rem) calc(50% - .15rem),
-      calc(100% - .75rem) calc(50% - .15rem);
-    background-size:.45rem .45rem, .45rem .45rem;
-    background-repeat:no-repeat;
+  .top-nav a {
     color:var(--neon);
-    font:inherit;
-    letter-spacing:inherit;
-    text-transform:uppercase;
-    box-shadow:0 0 14px rgba(57,255,20,.16);
-    cursor:pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .jump-nav select:hover,
-  .jump-nav select:focus-visible {
-    border-color:rgba(57,255,20,.85);
-    background-color:rgba(57,255,20,.1);
-    color:#f0fff0;
-    box-shadow:0 0 18px rgba(57,255,20,.32);
-    outline:none;
-  }
-  .jump-nav select:focus-visible {
-    outline:2px solid var(--neon);
-    outline-offset:2px;
-  }
-  .jump-nav select option {
-    background:#050705;
-    color:#e8ffe8;
-  }
-  .card[id] { scroll-margin-top:5.5rem; }
-  .menu {
-    position:relative;
-    flex:0 0 auto;
-    z-index:50;
-    display:flex;
-    align-items:center;
-  }
-  .menu-toggle {
-    display:inline-flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:calc(var(--brand-size, 2.5rem) * .12);
-    width:calc(var(--brand-size, 2.5rem) * 1.05);
-    height:calc(var(--brand-size, 2.5rem) * 1.05);
-    min-width:44px; min-height:44px;
-    padding:0;
-    border-radius:calc(var(--brand-size, 2.5rem) * .28);
-    border:1px solid rgba(57,255,20,.45);
-    background:rgba(5,7,5,.85);
-    color:var(--neon);
-    cursor:pointer;
-    box-shadow:0 0 14px rgba(57,255,20,.22);
-    backdrop-filter:blur(8px);
-    transition:background .2s ease, border-color .2s ease, box-shadow .2s ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .menu-toggle:hover,
-  .menu-toggle:focus-visible {
-    background:rgba(57,255,20,.14);
-    border-color:rgba(57,255,20,.8);
-    box-shadow:0 0 18px rgba(57,255,20,.4);
-    outline:none;
-  }
-  .menu-toggle:focus-visible {
-    outline:2px solid var(--neon);
-    outline-offset:2px;
-  }
-  .menu-toggle .bar {
-    display:block;
-    width:calc(var(--brand-size, 2.5rem) * .42);
-    height:max(2px, calc(var(--brand-size, 2.5rem) * .07));
-    margin:0 auto;
-    border-radius:2px;
-    background:currentColor;
-    box-shadow:0 0 6px rgba(57,255,20,.55);
-  }
-  .menu-panel {
-    position:absolute;
-    top:calc(100% + .45rem);
-    right:0;
-    min-width:9.5rem;
-    padding:.35rem;
-    border-radius:12px;
-    border:1px solid rgba(57,255,20,.4);
-    background:rgba(5,7,5,.95);
-    box-shadow:0 0 20px rgba(57,255,20,.2), 0 12px 28px rgba(0,0,0,.55);
-    backdrop-filter:blur(10px);
-  }
-  .menu-panel[hidden] { display:none; }
-  .menu-panel a {
-    display:block;
-    padding:.7rem .9rem;
-    border-radius:8px;
-    color:var(--text);
     text-decoration:none;
-    font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.85rem;
-    font-weight:700;
-    letter-spacing:.08em;
-    text-transform:uppercase;
+    white-space:nowrap;
+    transition:color .2s ease, text-shadow .2s ease;
+    -webkit-tap-highlight-color: transparent;
   }
-  .menu-panel a:hover,
-  .menu-panel a:focus-visible {
-    background:rgba(57,255,20,.12);
-    color:var(--neon);
+  .top-nav a:hover,
+  .top-nav a:focus-visible {
+    color:#f0fff0;
+    text-shadow:0 0 10px rgba(57,255,20,.55);
     outline:none;
+  }
+  .top-nav a:focus-visible {
+    outline:2px solid var(--neon);
+    outline-offset:2px;
+  }
+  .top-nav .dot {
+    color:var(--muted);
+    white-space:pre;
   }
   .brand {
     display:block;
-    flex:1 1 auto;
-    min-width:0;
+    width:100%;
     box-sizing:border-box;
     font-family: Orbitron, Rajdhani, "Segoe UI", sans-serif;
     font-weight:800;
-    font-size:var(--brand-size, clamp(2rem, 6.4vw, 3.6rem));
+    font-size:clamp(2rem, 6.4vw, 3.6rem);
     letter-spacing:clamp(.04em, 1.4vw, .16em);
     text-transform:uppercase;
-    text-align:left;
+    text-align:center;
     color:var(--neon);
     text-shadow:0 0 10px rgba(57,255,20,.7), 0 0 30px rgba(57,255,20,.35);
-    margin:0;
+    margin:0 0 .9rem;
     line-height:1.1;
     overflow-wrap:normal;
     text-decoration:none;
@@ -575,20 +462,10 @@
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="top-bar">
+            <nav class="top-nav" aria-label="Site">
+        <a href="index.html">Fleet</a><span class="dot" aria-hidden="true"> . </span><a href="reviews.html">Reviews</a><span class="dot" aria-hidden="true"> . </span><a href="extras.html">Extras</a><span class="dot" aria-hidden="true"> . </span><a href="#" id="login-link">Log In</a>
+      </nav>
       <div class="brand">CyberTuro</div>
-      <div class="menu" id="site-menu">
-        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel">
-          <span class="bar" aria-hidden="true"></span>
-          <span class="bar" aria-hidden="true"></span>
-          <span class="bar" aria-hidden="true"></span>
-        </button>
-        <div class="menu-panel" id="menu-panel" role="menu" hidden>
-          <a href="reviews.html" id="reviews-link" role="menuitem">Our Reviews</a>
-          <a href="extras.html" id="extras-link" role="menuitem">Our Extras</a>
-          <a href="#" id="login-link" role="menuitem">Login</a>
-        </div>
-      </div>
       </div>
       <nav class="jump-nav" aria-label="Jump to vehicle type">
         <label class="jump-label" for="jump-select">Jump to:</label>
@@ -1085,31 +962,6 @@
   </div>
 <script>
 (function() {
-  const menuRoot = document.getElementById('site-menu');
-  const menuBtn = document.getElementById('menu-toggle');
-  const menuPanel = document.getElementById('menu-panel');
-  function setMenuOpen(open) {
-    if (!menuBtn || !menuPanel) return;
-    menuPanel.hidden = !open;
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  }
-  if (menuBtn && menuPanel) {
-    menuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setMenuOpen(menuPanel.hidden);
-    });
-    document.addEventListener('click', (e) => {
-      if (menuPanel.hidden) return;
-      if (menuRoot && !menuRoot.contains(e.target)) setMenuOpen(false);
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !menuPanel.hidden) {
-        setMenuOpen(false);
-        menuBtn.focus();
-      }
-    });
-  }
 
   const jumpSelect = document.getElementById('jump-select');
   if (jumpSelect) {
