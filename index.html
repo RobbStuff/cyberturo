@@ -43,7 +43,80 @@
     position:relative;
     z-index:1;
   }
-  .hero { text-align:center; padding:2.2rem 1.2rem 2.6rem; }
+  .hero { text-align:center; padding:2.2rem 1.2rem 2.6rem; position:relative; }
+  .menu {
+    position:fixed;
+    top:1rem; right:1rem;
+    z-index:50;
+  }
+  .menu-toggle {
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:2.75rem; height:2.75rem;
+    min-width:44px; min-height:44px;
+    padding:0;
+    border-radius:12px;
+    border:1px solid rgba(57,255,20,.45);
+    background:rgba(5,7,5,.85);
+    color:var(--neon);
+    cursor:pointer;
+    box-shadow:0 0 14px rgba(57,255,20,.22);
+    backdrop-filter:blur(8px);
+    transition:background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    background:rgba(57,255,20,.14);
+    border-color:rgba(57,255,20,.8);
+    box-shadow:0 0 18px rgba(57,255,20,.4);
+    outline:none;
+  }
+  .menu-toggle:focus-visible {
+    outline:2px solid var(--neon);
+    outline-offset:2px;
+  }
+  .menu-toggle .bar {
+    display:block;
+    width:1.15rem; height:2px;
+    margin:0 auto;
+    border-radius:2px;
+    background:currentColor;
+    box-shadow:0 0 6px rgba(57,255,20,.55);
+  }
+  .menu-panel {
+    position:absolute;
+    top:calc(100% + .45rem);
+    right:0;
+    min-width:9.5rem;
+    padding:.35rem;
+    border-radius:12px;
+    border:1px solid rgba(57,255,20,.4);
+    background:rgba(5,7,5,.95);
+    box-shadow:0 0 20px rgba(57,255,20,.2), 0 12px 28px rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+  }
+  .menu-panel[hidden] { display:none; }
+  .menu-panel a {
+    display:block;
+    padding:.7rem .9rem;
+    border-radius:8px;
+    color:var(--text);
+    text-decoration:none;
+    font-family: Orbitron, Rajdhani, sans-serif;
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .menu-panel a:hover,
+  .menu-panel a:focus-visible {
+    background:rgba(57,255,20,.12);
+    color:var(--neon);
+    outline:none;
+  }
   .brand {
     font-family: Orbitron, Rajdhani, "Segoe UI", sans-serif;
     font-weight:800;
@@ -389,6 +462,16 @@
 <body>
   <div class="wrap">
     <header class="hero">
+      <div class="menu" id="site-menu">
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+        <div class="menu-panel" id="menu-panel" role="menu" hidden>
+          <a href="#" id="login-link" role="menuitem">Login</a>
+        </div>
+      </div>
       <div class="brand">CyberTuro</div>
       <h1>Here is our fleet:</h1>
     </header>
@@ -866,6 +949,32 @@
   </div>
 <script>
 (function() {
+  const menuRoot = document.getElementById('site-menu');
+  const menuBtn = document.getElementById('menu-toggle');
+  const menuPanel = document.getElementById('menu-panel');
+  function setMenuOpen(open) {
+    if (!menuBtn || !menuPanel) return;
+    menuPanel.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  if (menuBtn && menuPanel) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setMenuOpen(menuPanel.hidden);
+    });
+    document.addEventListener('click', (e) => {
+      if (menuPanel.hidden) return;
+      if (menuRoot && !menuRoot.contains(e.target)) setMenuOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menuPanel.hidden) {
+        setMenuOpen(false);
+        menuBtn.focus();
+      }
+    });
+  }
+
   const controllers = new WeakMap();
 
   function initCarousel(root) {
