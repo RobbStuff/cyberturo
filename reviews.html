@@ -347,19 +347,50 @@
     return String(text || '').trim().split(/\s+/).filter(Boolean);
   }
 
+  function wordLimit() {
+    const w = window.innerWidth;
+    if (w >= 1200) return 40;
+    if (w >= 768) return 30;
+    return 12;
+  }
+
   function reviewTextHtml(fullText) {
-    const words = wordsOf(fullText);
     const full = String(fullText || '').trim();
-    if (words.length <= 12) {
-      return '<p class="review-text">“' + escapeHtml(full) + '”</p>';
-    }
-    const preview = words.slice(0, 12).join(' ') + '…';
     return (
-      '<p class="review-text" data-full="' + encodeURIComponent(full) + '" data-preview="' + encodeURIComponent(preview) + '" data-expanded="false">' +
-        '“<span class="review-text-body">' + escapeHtml(preview) + '</span> ' +
-        '<button type="button" class="review-more" aria-expanded="false">more</button>”' +
+      '<p class="review-text" data-full="' + encodeURIComponent(full) + '" data-expanded="false">' +
+        '“<span class="review-text-body"></span><span class="review-toggle"> <button type="button" class="review-more" aria-expanded="false">more</button></span>”' +
       '</p>'
     );
+  }
+
+  function applyTruncation(el) {
+    if (!el || el.getAttribute('data-expanded') === 'true') return;
+    const full = decodeURIComponent(el.getAttribute('data-full') || '');
+    const body = el.querySelector('.review-text-body');
+    const toggle = el.querySelector('.review-toggle');
+    const btn = el.querySelector('.review-more');
+    if (!body) return;
+    const words = wordsOf(full);
+    const limit = wordLimit();
+    if (words.length <= limit) {
+      body.textContent = full;
+      if (toggle) toggle.hidden = true;
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'more';
+      }
+      return;
+    }
+    body.textContent = words.slice(0, limit).join(' ') + '…';
+    if (toggle) toggle.hidden = false;
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'more';
+    }
+  }
+
+  function applyAllTruncations() {
+    document.querySelectorAll('#reviews .review-text[data-full]').forEach(applyTruncation);
   }
 
   function render(reviews) {
@@ -397,6 +428,7 @@
         '</article>'
       );
     }).join('');
+    applyAllTruncations();
   }
 
   document.getElementById('reviews').addEventListener('click', function(e) {
@@ -405,19 +437,27 @@
     const wrap = btn.closest('.review-text');
     if (!wrap) return;
     const body = wrap.querySelector('.review-text-body');
+    const toggle = wrap.querySelector('.review-toggle');
     const expanded = wrap.getAttribute('data-expanded') === 'true';
     if (expanded) {
-      body.textContent = decodeURIComponent(wrap.getAttribute('data-preview') || '');
       wrap.setAttribute('data-expanded', 'false');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.textContent = 'more';
+      applyTruncation(wrap);
     } else {
       body.textContent = decodeURIComponent(wrap.getAttribute('data-full') || '');
       wrap.setAttribute('data-expanded', 'true');
+      if (toggle) toggle.hidden = false;
       btn.setAttribute('aria-expanded', 'true');
       btn.textContent = 'less';
     }
   });
+
+  let resizeTimer = 0;
+  function onViewportChange() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyAllTruncations, 100);
+  }
+  window.addEventListener('resize', onViewportChange);
+  window.addEventListener('orientationchange', onViewportChange);
 
   fetch('reviews.json', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : []))
