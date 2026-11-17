@@ -211,12 +211,14 @@
     color:var(--cyan);
   }
   .extras-grid {
+    /* ~18% larger than the prior compact tile defaults */
     --extra-tile-w: 10rem;
-    --extra-tile-pad-x: .55rem;
-    --extra-tile-pad-y: .4rem;
-    --extra-name-size: .72rem;
-    --extra-price-size: .62rem;
-    --extra-gap: .45rem;
+    --extra-tile-pad-x: .65rem;
+    --extra-tile-pad-y: .48rem;
+    --extra-name-size: .85rem;
+    --extra-price-size: .73rem;
+    --extra-gap: .5rem;
+    --extra-tile-min-h: 3.55rem;
     display:grid;
     grid-template-columns:repeat(2, var(--extra-tile-w));
     gap:var(--extra-gap);
@@ -225,10 +227,16 @@
     align-items:stretch;
   }
   @media (min-width:768px) and (max-width:1199px) {
-    .extras-grid { grid-template-columns:repeat(6, var(--extra-tile-w)); }
+    .extras-grid {
+      grid-template-columns:repeat(6, var(--extra-tile-w));
+      --extra-tile-min-h: 3.55rem;
+    }
   }
   @media (min-width:1200px) {
-    .extras-grid { grid-template-columns:repeat(4, var(--extra-tile-w)); }
+    .extras-grid {
+      grid-template-columns:repeat(4, var(--extra-tile-w));
+      --extra-tile-min-h: 3.7rem;
+    }
   }
   .extra-tile {
     position:relative;
@@ -236,11 +244,12 @@
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:.18rem;
+    gap:.22rem;
     box-sizing:border-box;
     width:var(--extra-tile-w);
     min-width:var(--extra-tile-w);
     max-width:var(--extra-tile-w);
+    min-height:var(--extra-tile-min-h);
     margin:0;
     padding:var(--extra-tile-pad-y) var(--extra-tile-pad-x);
     border-radius:12px;
@@ -473,25 +482,25 @@
     if (!titles.length) return;
 
     const sample = grids[0];
-    // Reset to comfortable defaults, then shrink on tablet if needed.
-    let nameSize = 0.72; // rem
-    let priceSize = 0.62;
-    let padX = 0.55;
-    let padY = 0.4;
-    const gap = 0.45;
+    // Comfortable larger defaults (~18% above prior compact tiles).
+    let nameSize = 0.85; // rem
+    let priceSize = 0.73;
+    let padX = 0.65;
+    let padY = 0.48;
+    const gap = 0.5;
+
+    function remPx() {
+      return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    }
 
     function applyVars() {
-      document.querySelectorAll('.extras-grid').forEach((grid) => {
+      grids.forEach((grid) => {
         grid.style.setProperty('--extra-name-size', nameSize + 'rem');
         grid.style.setProperty('--extra-price-size', priceSize + 'rem');
         grid.style.setProperty('--extra-tile-pad-x', padX + 'rem');
         grid.style.setProperty('--extra-tile-pad-y', padY + 'rem');
         grid.style.setProperty('--extra-gap', gap + 'rem');
       });
-    }
-
-    function remPx() {
-      return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
     }
 
     function computeWidth() {
@@ -506,7 +515,7 @@
         cs.fontFamily || 'Rajdhani, sans-serif',
         cs.letterSpacing || '0.01em'
       );
-      // horizontal padding + title + 1px borders
+      // W = one-line longest title + horizontal padding + borders
       return titleW + padX * 2 * rem + 2;
     }
 
@@ -525,18 +534,18 @@
       return cols * w + (cols - 1) * gap * remPx();
     }
 
-    // On iPad (6 across), shrink font/padding until the row fits.
+    // iPad only: largest font that still fits 6 equal one-line tiles.
     if (cols === 6 && rowNeed(tileW) > avail) {
-      for (let i = 0; i < 16 && rowNeed(tileW) > avail; i++) {
-        nameSize = Math.round(Math.max(0.5, nameSize - 0.03) * 100) / 100;
-        priceSize = Math.round(Math.max(0.46, priceSize - 0.025) * 100) / 100;
-        padX = Math.round(Math.max(0.25, padX - 0.03) * 100) / 100;
-        padY = Math.round(Math.max(0.25, padY - 0.02) * 100) / 100;
+      for (let i = 0; i < 24 && rowNeed(tileW) > avail; i++) {
+        nameSize = Math.round(Math.max(0.5, nameSize - 0.02) * 100) / 100;
+        priceSize = Math.round(Math.max(0.46, priceSize - 0.015) * 100) / 100;
+        padX = Math.round(Math.max(0.28, padX - 0.02) * 100) / 100;
+        padY = Math.round(Math.max(0.28, padY - 0.015) * 100) / 100;
         tileW = Math.ceil(computeWidth());
       }
     }
 
-    document.querySelectorAll('.extras-grid').forEach((grid) => {
+    grids.forEach((grid) => {
       grid.style.setProperty('--extra-tile-w', tileW + 'px');
     });
   }
@@ -586,15 +595,12 @@
       );
     }).join('');
 
-    const runSize = function() {
-      sizeExtraTiles();
-    };
+    const runSize = function() { sizeExtraTiles(); };
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(runSize).catch(runSize);
     } else {
       runSize();
     }
-    // Remeasure after layout settles.
     requestAnimationFrame(runSize);
   }
 
