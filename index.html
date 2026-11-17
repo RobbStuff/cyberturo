@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CyberTuro — Here is our fleet</title>
+<title>CyberTuro — Here Is Our Fleet</title>
 <meta name="description" content="CyberTuro Tesla Cybertruck and Model Y fleet. Book on Turo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -466,17 +466,7 @@
         <a href="index.html">Fleet</a><span class="dot" aria-hidden="true"> . </span><a href="reviews.html">Reviews</a><span class="dot" aria-hidden="true"> . </span><a href="extras.html">Extras</a><span class="dot" aria-hidden="true"> . </span><a href="#" id="login-link">Log In</a>
       </nav>
       <div class="brand">CyberTuro</div>
-      </div>
-      <nav class="jump-nav" aria-label="Jump to vehicle type">
-        <label class="jump-label" for="jump-select">Jump to:</label>
-        <select id="jump-select">
-          <option value="" selected>Choose</option>
-          <option value="model-y">Model Y</option>
-          <option value="model-y-l">Model Y L</option>
-          <option value="cybertruck">Cybertruck</option>
-        </select>
-      </nav>
-      <h1>Here is our fleet:</h1>
+      <h1>Here Is Our Fleet:</h1>
     </header>
     <main class="grid">
     <!--
@@ -962,18 +952,6 @@
   </div>
 <script>
 (function() {
-
-  const jumpSelect = document.getElementById('jump-select');
-  if (jumpSelect) {
-    jumpSelect.addEventListener('change', () => {
-      const id = jumpSelect.value;
-      if (!id) return;
-      const target = document.getElementById(id);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      jumpSelect.value = '';
-    });
-  }
-
 
   document.querySelectorAll('.spec-toggle').forEach((btn) => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));
