@@ -210,39 +210,57 @@
     font-size:.88rem;
     color:var(--cyan);
   }
-  .extras-list {
-    list-style:none;
-    margin:0;
-    padding:0;
+  .extras-grid {
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:.45rem;
+    align-items:stretch;
+  }
+  @media (min-width:768px) {
+    .extras-grid { grid-template-columns:repeat(7, minmax(0, 1fr)); }
+  }
+  @media (min-width:1200px) {
+    .extras-grid { grid-template-columns:repeat(10, minmax(0, 1fr)); }
+  }
+  .extra-tile {
+    position:relative;
     display:flex;
     flex-direction:column;
-    gap:.55rem;
-  }
-  .extras-list li {
-    padding:.65rem .75rem;
+    align-items:center;
+    justify-content:flex-start;
+    gap:.2rem;
+    width:100%;
+    min-height:68px;
+    max-width:90px;
+    margin:0 auto;
+    aspect-ratio:1 / 1;
+    padding:.4rem .28rem .35rem;
     border-radius:12px;
-    border:1px solid rgba(57,255,20,.16);
+    border:1px solid rgba(57,255,20,.2);
     background:rgba(57,255,20,.04);
+    color:inherit;
+    font:inherit;
+    text-align:center;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;
   }
-  .extra-top {
-    display:flex;
-    flex-wrap:wrap;
-    gap:.35rem .75rem;
-    align-items:center;
-    justify-content:space-between;
+  .extra-tile:hover,
+  .extra-tile:focus-visible {
+    border-color:rgba(57,255,20,.55);
+    background:rgba(57,255,20,.08);
+    outline:none;
   }
-  .extra-label {
-    display:inline-flex;
-    align-items:center;
-    gap:.45rem;
-    min-width:0;
+  .extra-tile.is-open {
+    border-color:rgba(255,140,26,.65);
+    box-shadow:0 0 12px rgba(255,140,26,.18);
   }
   .extra-icon {
     flex:0 0 auto;
-    width:1.15rem;
-    height:1.15rem;
+    width:.95rem;
+    height:.95rem;
     color:var(--neon);
-    filter:drop-shadow(0 0 6px rgba(57,255,20,.45));
+    filter:drop-shadow(0 0 5px rgba(57,255,20,.4));
   }
   .extra-icon svg {
     display:block;
@@ -250,40 +268,67 @@
     height:100%;
   }
   .extra-name {
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+    overflow:hidden;
+    margin:0;
     font-weight:700;
-    font-size:1.02rem;
+    font-size:.68rem;
+    line-height:1.15;
+    letter-spacing:.01em;
     color:#efffef;
+    word-break:break-word;
   }
   .extra-price {
+    margin:0;
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.82rem;
-    letter-spacing:.04em;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:#ff8c1a;
+    line-height:1.2;
+  }
+  .extra-chev {
+    position:absolute;
+    right:.18rem;
+    bottom:.1rem;
+    font-size:.7rem;
+    line-height:1;
+    color:var(--muted);
+    transition:transform .2s ease, color .2s ease;
+  }
+  .extra-tile.is-open .extra-chev {
+    color:#ff8c1a;
+    transform:rotate(90deg);
+  }
+  .extra-detail {
+    grid-column:1 / -1;
+    padding:.7rem .8rem;
+    border-radius:12px;
+    border:1px solid rgba(255,140,26,.35);
+    background:linear-gradient(180deg, rgba(255,140,26,.08), rgba(0,0,0,.22));
+    box-shadow:0 0 14px rgba(255,140,26,.1);
+  }
+  .extra-detail-title {
+    margin:0 0 .3rem;
+    font-family: Orbitron, Rajdhani, sans-serif;
+    font-size:.88rem;
+    font-weight:700;
+    letter-spacing:.03em;
     color:var(--neon);
   }
-  .extra-desc {
-    margin:.35rem 0 0;
-    color:#efffef;
+  .extra-detail-price {
+    margin:0 0 .45rem;
+    font-size:.8rem;
+    color:#ff8c1a;
+    font-weight:700;
+  }
+  .extra-detail-desc {
+    margin:0;
     font-size:1.02rem;
     line-height:1.45;
-  }
-  .extra-more {
-    display:inline;
-    margin:0;
-    padding:0;
-    border:0;
-    background:none;
-    color:var(--cyan);
-    font:inherit;
-    font-weight:600;
-    letter-spacing:.02em;
-    cursor:pointer;
-    text-decoration:none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .extra-more:hover,
-  .extra-more:focus-visible {
-    color:var(--neon);
-    outline:none;
+    color:#efffef;
   }
   .placeholder {
     text-align:center;
@@ -359,17 +404,6 @@
     return money + (unit ? (' ' + unit) : '');
   }
 
-  function wordsOf(text) {
-    return String(text || '').trim().split(/\s+/).filter(Boolean);
-  }
-
-  function wordLimit() {
-    const w = window.innerWidth;
-    if (w >= 1200) return 40;
-    if (w >= 768) return 30;
-    return 12;
-  }
-
   // Extensible keyword → icon key mapping (first match wins; add rows as needed).
   const EXTRA_ICON_RULES = [
     { keys: ['charging', 'ev', 'supercharge', 'supercharger'], icon: 'bolt' },
@@ -411,47 +445,7 @@
   function extraIconHtml(name) {
     const key = iconForExtraName(name);
     const svg = EXTRA_ICONS[key] || EXTRA_ICONS.tag;
-    return '<span class="extra-icon" title="' + escapeHtml(key) + '">' + svg + '</span>';
-  }
-
-  function descHtml(description) {
-    const full = String(description || '').trim();
-    if (!full) return '';
-    return (
-      '<p class="extra-desc" data-full="' + encodeURIComponent(full) + '" data-expanded="false">' +
-        '<span class="extra-desc-body"></span><span class="extra-toggle"> <button type="button" class="extra-more" aria-expanded="false">more</button></span>' +
-      '</p>'
-    );
-  }
-
-  function applyTruncation(el) {
-    if (!el || el.getAttribute('data-expanded') === 'true') return;
-    const full = decodeURIComponent(el.getAttribute('data-full') || '');
-    const body = el.querySelector('.extra-desc-body');
-    const toggle = el.querySelector('.extra-toggle');
-    const btn = el.querySelector('.extra-more');
-    if (!body) return;
-    const words = wordsOf(full);
-    const limit = wordLimit();
-    if (words.length <= limit) {
-      body.textContent = full;
-      if (toggle) toggle.hidden = true;
-      if (btn) {
-        btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'more';
-      }
-      return;
-    }
-    body.textContent = words.slice(0, limit).join(' ') + '…';
-    if (toggle) toggle.hidden = false;
-    if (btn) {
-      btn.setAttribute('aria-expanded', 'false');
-      btn.textContent = 'more';
-    }
-  }
-
-  function applyAllTruncations() {
-    document.querySelectorAll('#extras-root .extra-desc[data-full]').forEach(applyTruncation);
+    return '<span class="extra-icon" aria-hidden="true">' + svg + '</span>';
   }
 
   function showGlobalPlaceholder(message) {
@@ -460,6 +454,51 @@
         '<h2>Extras list coming soon</h2>' +
         '<p>' + escapeHtml(message || 'Optional extras from each public Turo listing will appear here once available.') + '</p>' +
       '</div>';
+  }
+
+  function closeOpenInCar(car) {
+    if (!car) return;
+    car.querySelectorAll('.extra-tile.is-open').forEach((tile) => {
+      tile.classList.remove('is-open');
+      tile.setAttribute('aria-expanded', 'false');
+    });
+    car.querySelectorAll('.extra-detail').forEach((panel) => panel.remove());
+  }
+
+  function gridColumnCount(grid) {
+    const styles = getComputedStyle(grid);
+    const cols = styles.gridTemplateColumns.split(' ').filter(Boolean).length;
+    return Math.max(1, cols);
+  }
+
+  function openDetail(tile) {
+    const car = tile.closest('.vehicle-extras');
+    const grid = tile.closest('.extras-grid');
+    if (!car || !grid) return;
+    const alreadyOpen = tile.classList.contains('is-open');
+    closeOpenInCar(car);
+    if (alreadyOpen) return;
+
+    tile.classList.add('is-open');
+    tile.setAttribute('aria-expanded', 'true');
+
+    const name = tile.getAttribute('data-name') || '';
+    const price = tile.getAttribute('data-price') || '';
+    const desc = decodeURIComponent(tile.getAttribute('data-desc') || '');
+    const panel = document.createElement('div');
+    panel.className = 'extra-detail';
+    panel.innerHTML =
+      '<p class="extra-detail-title">' + escapeHtml(name) + '</p>' +
+      (price ? ('<p class="extra-detail-price">' + escapeHtml(price) + '</p>') : '') +
+      (desc ? ('<p class="extra-detail-desc">' + escapeHtml(desc) + '</p>') : '<p class="extra-detail-desc">No description available.</p>');
+
+    const tiles = [...grid.querySelectorAll('.extra-tile')];
+    const index = tiles.indexOf(tile);
+    const cols = gridColumnCount(grid);
+    const rowEnd = Math.min(tiles.length - 1, (Math.floor(index / cols) + 1) * cols - 1);
+    const anchor = tiles[rowEnd];
+    if (anchor && anchor.nextSibling) grid.insertBefore(panel, anchor.nextSibling);
+    else grid.appendChild(panel);
   }
 
   function render(data) {
@@ -474,19 +513,22 @@
 
     root.innerHTML = vehicles.map((v) => {
       const extras = Array.isArray(v.extras) ? v.extras : [];
-      const listHtml = extras.length
-        ? ('<ul class="extras-list">' + extras.map((e) => (
-            '<li>' +
-              '<div class="extra-top">' +
-                '<span class="extra-label">' +
-                  extraIconHtml(e.name) +
-                  '<span class="extra-name">' + escapeHtml(e.name || '') + '</span>' +
-                '</span>' +
-                '<span class="extra-price">' + escapeHtml(formatPrice(e.price, e.unit)) + '</span>' +
-              '</div>' +
-              descHtml(e.description) +
-            '</li>'
-          )).join('') + '</ul>')
+      const gridHtml = extras.length
+        ? ('<div class="extras-grid">' + extras.map((e) => {
+            const price = formatPrice(e.price, e.unit);
+            const desc = String(e.description || '').trim();
+            return (
+              '<button type="button" class="extra-tile" aria-expanded="false"' +
+                ' data-name="' + escapeHtml(e.name || '') + '"' +
+                ' data-price="' + escapeHtml(price) + '"' +
+                ' data-desc="' + encodeURIComponent(desc) + '">' +
+                extraIconHtml(e.name) +
+                '<span class="extra-name">' + escapeHtml(e.name || '') + '</span>' +
+                '<span class="extra-price">' + escapeHtml(price) + '</span>' +
+                '<span class="extra-chev" aria-hidden="true">›</span>' +
+              '</button>'
+            );
+          }).join('') + '</div>')
         : '<p class="empty-extras">No extras listed for this vehicle yet.</p>';
       const note = v.extrasNote
         ? ('<p class="extras-note">' + escapeHtml(v.extrasNote) + '</p>')
@@ -501,37 +543,25 @@
             '</div>' +
           '</header>' +
           note +
-          listHtml +
+          gridHtml +
         '</article>'
       );
     }).join('');
-    applyAllTruncations();
   }
 
   document.getElementById('extras-root').addEventListener('click', function(e) {
-    const btn = e.target.closest('.extra-more');
-    if (!btn) return;
-    const wrap = btn.closest('.extra-desc');
-    if (!wrap) return;
-    const body = wrap.querySelector('.extra-desc-body');
-    const toggle = wrap.querySelector('.extra-toggle');
-    const expanded = wrap.getAttribute('data-expanded') === 'true';
-    if (expanded) {
-      wrap.setAttribute('data-expanded', 'false');
-      applyTruncation(wrap);
-    } else {
-      body.textContent = decodeURIComponent(wrap.getAttribute('data-full') || '');
-      wrap.setAttribute('data-expanded', 'true');
-      if (toggle) toggle.hidden = false;
-      btn.setAttribute('aria-expanded', 'true');
-      btn.textContent = 'less';
-    }
+    const tile = e.target.closest('.extra-tile');
+    if (!tile) return;
+    openDetail(tile);
   });
 
   let resizeTimer = 0;
   function onViewportChange() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(applyAllTruncations, 100);
+    resizeTimer = setTimeout(function() {
+      // Close open panels so they re-anchor correctly under the new row layout.
+      document.querySelectorAll('.vehicle-extras').forEach(closeOpenInCar);
+    }, 100);
   }
   window.addEventListener('resize', onViewportChange);
   window.addEventListener('orientationchange', onViewportChange);
