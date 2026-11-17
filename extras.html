@@ -221,32 +221,23 @@
     color:var(--cyan);
   }
   .extras-grid {
-    --extra-cols: 2;
     --extra-tile-pad-x: .65rem;
     --extra-tile-pad-y: .48rem;
     --extra-name-size: .85rem;
     --extra-price-size: .73rem;
-    --extra-gap: .45rem;
+    --extra-gap: .5rem;
     --extra-tile-min-h: 3.55rem;
     display:grid;
-    /* Equal columns fill the content row (phone: 2×1fr; desktop: 4×1fr; iPad: N×1fr). */
-    grid-template-columns:repeat(var(--extra-cols), minmax(0, 1fr));
+    /* Exactly 2 equal columns on all screen sizes, filling content width. */
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:var(--extra-gap);
     justify-content:stretch;
     justify-items:stretch;
     align-items:stretch;
     width:100%;
   }
-  @media (min-width:768px) and (max-width:1199px) {
+  @media (min-width:768px) {
     .extras-grid {
-      --extra-cols: 4; /* JS may raise/lower to best fill */
-      --extra-tile-min-h: 3.9rem;
-      --extra-gap: .5rem;
-    }
-  }
-  @media (min-width:1200px) {
-    .extras-grid {
-      --extra-cols: 4;
       --extra-tile-min-h: 3.7rem;
       --extra-gap: .55rem;
     }
@@ -495,24 +486,19 @@
     if (!titles.length) return;
 
     const sample = grids[0];
-    const vw = window.innerWidth;
-    const isPhone = vw < 768;
-    const isTablet = vw >= 768 && vw < 1200;
-    const isDesktop = vw >= 1200;
-
+    const cols = 2; // exactly 2 equal columns on all breakpoints
     let nameSize = 0.85;
     let priceSize = 0.73;
     let padX = 0.65;
     let padY = 0.48;
-    let gap = isPhone ? 0.45 : (isDesktop ? 0.55 : 0.5);
+    const gap = window.innerWidth >= 768 ? 0.55 : 0.5;
 
     function remPx() {
       return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
     }
 
-    function applyVars(cols) {
+    function applyVars() {
       grids.forEach((grid) => {
-        grid.style.setProperty('--extra-cols', String(cols));
         grid.style.setProperty('--extra-name-size', nameSize + 'rem');
         grid.style.setProperty('--extra-price-size', priceSize + 'rem');
         grid.style.setProperty('--extra-tile-pad-x', padX + 'rem');
@@ -544,116 +530,51 @@
         - (parseFloat(parentStyle.paddingRight) || 0)
     ) || sample.clientWidth || window.innerWidth;
 
-    // Phone 2 / desktop 4; iPad picks 4–5 (fallback 3/6) for bigger equal tiles.
-    let cols = isPhone ? 2 : 4;
-    const fontSteps = isPhone
-      ? [
-          { name: 0.98, price: 0.82, padX: 0.42, padY: 0.5 },
-          { name: 0.95, price: 0.8, padX: 0.45, padY: 0.5 },
-          { name: 0.92, price: 0.78, padX: 0.48, padY: 0.48 },
-          { name: 0.9, price: 0.76, padX: 0.5, padY: 0.48 },
-          { name: 0.88, price: 0.74, padX: 0.52, padY: 0.46 },
-          { name: 0.85, price: 0.73, padX: 0.55, padY: 0.45 },
-          { name: 0.8, price: 0.68, padX: 0.5, padY: 0.42 }
-        ]
-      : [
-          { name: 1.05, price: 0.88, padX: 0.75, padY: 0.55 },
-          { name: 1.0, price: 0.84, padX: 0.72, padY: 0.55 },
-          { name: 0.95, price: 0.8, padX: 0.7, padY: 0.52 },
-          { name: 0.9, price: 0.76, padX: 0.68, padY: 0.5 },
-          { name: 0.85, price: 0.73, padX: 0.65, padY: 0.48 },
-          { name: 0.8, price: 0.68, padX: 0.6, padY: 0.45 }
-        ];
+    // Largest readable font that keeps the longest title on one line in a 2-col cell.
+    const fontSteps = [
+      { name: 1.05, price: 0.88, padX: 0.75, padY: 0.55 },
+      { name: 1.0, price: 0.84, padX: 0.72, padY: 0.55 },
+      { name: 0.95, price: 0.8, padX: 0.7, padY: 0.52 },
+      { name: 0.92, price: 0.78, padX: 0.55, padY: 0.5 },
+      { name: 0.9, price: 0.76, padX: 0.5, padY: 0.48 },
+      { name: 0.85, price: 0.73, padX: 0.55, padY: 0.45 },
+      { name: 0.8, price: 0.68, padX: 0.5, padY: 0.42 }
+    ];
 
-    if (isTablet) {
-      const colOptions = [4, 5, 3, 6];
-      let best = null;
-      for (const step of fontSteps) {
-        nameSize = step.name;
-        priceSize = step.price;
-        padX = step.padX;
-        padY = step.padY;
-        const { rem, minW } = titleMetrics();
-        const gapPx = gap * rem;
-        for (const n of colOptions) {
-          // Equal 1fr columns fill the full content width; cell must fit one-line title.
-          const cellW = (avail - (n - 1) * gapPx) / n;
-          if (cellW + 0.5 < minW) continue;
-          const preferredN = (n === 4 || n === 5) ? 80 : 0;
-          const candidate = {
-            cols: n,
-            nameSize,
-            priceSize,
-            padX,
-            padY,
-            score: nameSize * 1000 + preferredN + cellW / 100
-          };
-          if (!best || candidate.score > best.score) best = candidate;
-        }
-        if (best && best.nameSize >= 1.0 && (best.cols === 4 || best.cols === 5)) break;
+    let chosen = null;
+    for (const step of fontSteps) {
+      nameSize = step.name;
+      priceSize = step.price;
+      padX = step.padX;
+      padY = step.padY;
+      const { rem, minW } = titleMetrics();
+      const gapPx = gap * rem;
+      const cellW = (avail - (cols - 1) * gapPx) / cols;
+      if (cellW + 0.5 >= minW) {
+        chosen = step;
+        break;
       }
-      if (best) {
-        cols = best.cols;
-        nameSize = best.nameSize;
-        priceSize = best.priceSize;
-        padX = best.padX;
-        padY = best.padY;
-      } else {
-        cols = 4;
-        nameSize = 0.85;
-        priceSize = 0.73;
-        padX = 0.65;
-        padY = 0.48;
-        let { rem, minW } = titleMetrics();
-        let gapPx = gap * rem;
-        let cellW = (avail - (cols - 1) * gapPx) / cols;
-        for (let i = 0; i < 24 && cellW + 0.5 < minW; i++) {
-          nameSize = Math.round(Math.max(0.55, nameSize - 0.02) * 100) / 100;
-          priceSize = Math.round(Math.max(0.48, priceSize - 0.015) * 100) / 100;
-          padX = Math.round(Math.max(0.3, padX - 0.02) * 100) / 100;
-          padY = Math.round(Math.max(0.3, padY - 0.015) * 100) / 100;
-          ({ rem, minW } = titleMetrics());
-          gapPx = gap * rem;
-          cellW = (avail - (cols - 1) * gapPx) / cols;
-        }
-      }
-    } else {
-      // Phone (2×1fr) / desktop (4×1fr): fill the row; largest font that fits one line.
-      let chosen = null;
-      for (const step of fontSteps) {
-        nameSize = step.name;
-        priceSize = step.price;
-        padX = step.padX;
-        padY = step.padY;
-        const { rem, minW } = titleMetrics();
-        const gapPx = gap * rem;
-        const cellW = (avail - (cols - 1) * gapPx) / cols;
-        if (cellW + 0.5 >= minW) {
-          chosen = step;
-          break;
-        }
-      }
-      if (!chosen) {
-        nameSize = 0.8;
-        priceSize = 0.68;
-        padX = 0.5;
-        padY = 0.42;
-        let { rem, minW } = titleMetrics();
-        let gapPx = gap * rem;
-        let cellW = (avail - (cols - 1) * gapPx) / cols;
-        for (let i = 0; i < 24 && cellW + 0.5 < minW; i++) {
-          nameSize = Math.round(Math.max(0.55, nameSize - 0.02) * 100) / 100;
-          priceSize = Math.round(Math.max(0.48, priceSize - 0.015) * 100) / 100;
-          padX = Math.round(Math.max(0.28, padX - 0.02) * 100) / 100;
-          padY = Math.round(Math.max(0.28, padY - 0.015) * 100) / 100;
-          ({ rem, minW } = titleMetrics());
-          gapPx = gap * rem;
-          cellW = (avail - (cols - 1) * gapPx) / cols;
-        }
+    }
+    if (!chosen) {
+      nameSize = 0.8;
+      priceSize = 0.68;
+      padX = 0.5;
+      padY = 0.42;
+      let { rem, minW } = titleMetrics();
+      let gapPx = gap * rem;
+      let cellW = (avail - (cols - 1) * gapPx) / cols;
+      for (let i = 0; i < 24 && cellW + 0.5 < minW; i++) {
+        nameSize = Math.round(Math.max(0.55, nameSize - 0.02) * 100) / 100;
+        priceSize = Math.round(Math.max(0.48, priceSize - 0.015) * 100) / 100;
+        padX = Math.round(Math.max(0.28, padX - 0.02) * 100) / 100;
+        padY = Math.round(Math.max(0.28, padY - 0.015) * 100) / 100;
+        ({ rem, minW } = titleMetrics());
+        gapPx = gap * rem;
+        cellW = (avail - (cols - 1) * gapPx) / cols;
       }
     }
 
-    applyVars(cols);
+    applyVars();
   }
 
   function render(data) {
