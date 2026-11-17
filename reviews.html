@@ -257,6 +257,13 @@
     line-height:1.45;
     color:#efffef;
   }
+  .review-attribution {
+    margin:.35rem 0 0;
+    font-size:.9rem;
+    font-style:italic;
+    line-height:1.3;
+    color:var(--muted);
+  }
   .review-more {
     display:inline;
     margin:0;
@@ -445,7 +452,11 @@
       const name = NAMES[id] || r.vehicleName || 'Fleet vehicle';
       const img = r.photo || (id ? ('images/' + id + '_1.jpg') : '');
       const who = r.reviewerFirstName || r.reviewer || 'Guest';
+      const firstName = String(r.reviewerFirstName || '').trim();
       const when = formatDate(r.date);
+      const attribution = firstName
+        ? ('<p class="review-attribution">— ' + escapeHtml(firstName) + '</p>')
+        : '';
       return (
         '<article class="review">' +
           '<div class="review-media">' +
@@ -460,6 +471,7 @@
               '<span>' + escapeHtml(who) + (when ? ' · ' + escapeHtml(when) : '') + '</span>' +
             '</div>' +
             reviewTextHtml(r.text) +
+            attribution +
           '</div>' +
         '</article>'
       );
