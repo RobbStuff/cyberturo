@@ -44,6 +44,47 @@
     z-index:1;
   }
   .hero { text-align:center; padding:2.2rem 1.2rem 2.6rem; position:relative; }
+  .jump-nav {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.55rem;
+    margin-top:1.35rem;
+  }
+  .jump-nav a {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:2.4rem;
+    padding:.45rem 1.05rem;
+    border-radius:999px;
+    border:1px solid rgba(57,255,20,.4);
+    background:rgba(57,255,20,.06);
+    color:var(--neon);
+    text-decoration:none;
+    font-family: Orbitron, Rajdhani, sans-serif;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    box-shadow:0 0 12px rgba(57,255,20,.12);
+    transition:background .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .jump-nav a:hover,
+  .jump-nav a:focus-visible {
+    background:rgba(57,255,20,.16);
+    border-color:rgba(57,255,20,.85);
+    color:#f0fff0;
+    box-shadow:0 0 18px rgba(57,255,20,.35);
+    outline:none;
+    transform:translateY(-1px);
+  }
+  .jump-nav a:focus-visible {
+    outline:2px solid var(--neon);
+    outline-offset:2px;
+  }
+  .card[id] { scroll-margin-top:5.5rem; }
   .menu {
     position:fixed;
     top:1rem; right:1rem;
@@ -474,9 +515,14 @@
       </div>
       <div class="brand">CyberTuro</div>
       <h1>Here is our fleet:</h1>
+      <nav class="jump-nav" aria-label="Jump to vehicle type">
+        <a href="#model-y">Model Y</a>
+        <a href="#model-y-l">Model Y L</a>
+        <a href="#cybertruck">Cybertruck</a>
+      </nav>
     </header>
     <main class="grid">
-    <article class="card" data-vehicle-id="2587824" data-listing-id="2587824">
+    <article class="card" id="cybertruck" data-vehicle-id="2587824" data-listing-id="2587824">
       <div class="carousel" data-count="20">
         <div class="viewport"><div class="slide active" data-index="0"><img src="images/2587824_1.jpg" alt="2024 Tesla Cybertruck photo 1" data-full="images/2587824_1.jpg"></div>
 <div class="slide" data-index="1"><img src="images/2587824_2.jpg" alt="2024 Tesla Cybertruck photo 2" loading="lazy" data-full="images/2587824_2.jpg"></div>
@@ -550,7 +596,7 @@
         <div class="price-row"><a class="book" href="https://turo.com/us/en/truck-rental/united-states/melbourne-fl/tesla/cybertruck/2740306" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
-    <article class="card" data-vehicle-id="3307368" data-listing-id="3307368">
+    <article class="card" id="model-y" data-vehicle-id="3307368" data-listing-id="3307368">
       <div class="carousel" data-count="20">
         <div class="viewport"><div class="slide active" data-index="0"><img src="images/3307368_1.jpg" alt="2026 Tesla Model Y photo 1" data-full="images/3307368_1.jpg"></div>
 <div class="slide" data-index="1"><img src="images/3307368_2.jpg" alt="2026 Tesla Model Y photo 2" loading="lazy" data-full="images/3307368_2.jpg"></div>
@@ -861,7 +907,7 @@
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3619928" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
-    <article class="card" data-vehicle-id="3943006" data-listing-id="3943006">
+    <article class="card" id="model-y-l" data-vehicle-id="3943006" data-listing-id="3943006">
       <div class="carousel" data-count="20">
         <div class="viewport"><div class="slide active" data-index="0"><img src="images/3943006_1.jpg" alt="2027 Tesla Model Y photo 1" data-full="images/3943006_1.jpg"></div>
 <div class="slide" data-index="1"><img src="images/3943006_2.jpg" alt="2027 Tesla Model Y photo 2" loading="lazy" data-full="images/3943006_2.jpg"></div>
