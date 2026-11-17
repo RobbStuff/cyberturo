@@ -161,40 +161,44 @@
   .fleet-extras {
     display:flex;
     flex-direction:column;
-    gap:1.35rem;
+    gap:1.25rem;
   }
   .vehicle-extras {
-    display:grid;
-    grid-template-columns:132px 1fr;
-    gap:1rem;
+    display:flex;
+    flex-direction:column;
+    gap:.85rem;
     padding:1rem;
     border-radius:var(--radius);
     border:1px solid rgba(57,255,20,.28);
     background:linear-gradient(180deg, rgba(57,255,20,.05), rgba(0,0,0,.28));
     box-shadow:0 0 18px rgba(57,255,20,.08);
   }
-  @media (max-width:560px) {
-    .vehicle-extras { grid-template-columns:1fr; }
+  .vehicle-head {
+    display:grid;
+    grid-template-columns:68px 1fr;
+    gap:.85rem;
+    align-items:center;
   }
   .vehicle-photo {
-    width:100%;
-    aspect-ratio:4/3;
+    width:68px;
+    height:68px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:10px;
     border:1px solid rgba(57,255,20,.25);
     background:#030503;
+    flex-shrink:0;
   }
   .vehicle-name {
     margin:0;
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:clamp(1.25rem, 2.8vw, 1.55rem);
-    font-weight:800;
+    font-size:clamp(1.05rem, 2.4vw, 1.25rem);
+    font-weight:700;
     letter-spacing:.04em;
-    color:#f5fff5;
+    color:var(--neon);
     text-shadow:0 0 8px rgba(57,255,20,.35);
   }
   .vehicle-model {
-    margin:.15rem 0 .7rem;
+    margin:.15rem 0 0;
     font-family: Orbitron, Rajdhani, sans-serif;
     font-size:.9rem;
     font-weight:700;
@@ -202,7 +206,7 @@
     color:#ff8c1a;
   }
   .extras-note {
-    margin:0 0 .55rem;
+    margin:0;
     font-size:.88rem;
     color:var(--cyan);
   }
@@ -215,8 +219,8 @@
     gap:.55rem;
   }
   .extras-list li {
-    padding:.55rem .7rem;
-    border-radius:10px;
+    padding:.65rem .75rem;
+    border-radius:12px;
     border:1px solid rgba(57,255,20,.16);
     background:rgba(57,255,20,.04);
   }
@@ -257,10 +261,29 @@
     color:var(--neon);
   }
   .extra-desc {
-    margin:.25rem 0 0;
-    color:var(--muted);
-    font-size:.95rem;
-    line-height:1.35;
+    margin:.35rem 0 0;
+    color:#efffef;
+    font-size:1.02rem;
+    line-height:1.45;
+  }
+  .extra-more {
+    display:inline;
+    margin:0;
+    padding:0;
+    border:0;
+    background:none;
+    color:var(--cyan);
+    font:inherit;
+    font-weight:600;
+    letter-spacing:.02em;
+    cursor:pointer;
+    text-decoration:none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .extra-more:hover,
+  .extra-more:focus-visible {
+    color:var(--neon);
+    outline:none;
   }
   .placeholder {
     text-align:center;
@@ -329,12 +352,22 @@
       .replace(/"/g, '&quot;');
   }
 
-
   function formatPrice(price, unit) {
     if (price == null || price === '') return '';
     const n = Number(price);
     const money = Number.isFinite(n) ? ('$' + n.toFixed(n % 1 ? 2 : 0)) : String(price);
     return money + (unit ? (' ' + unit) : '');
+  }
+
+  function wordsOf(text) {
+    return String(text || '').trim().split(/\s+/).filter(Boolean);
+  }
+
+  function wordLimit() {
+    const w = window.innerWidth;
+    if (w >= 1200) return 40;
+    if (w >= 768) return 30;
+    return 12;
   }
 
   // Extensible keyword → icon key mapping (first match wins; add rows as needed).
@@ -364,7 +397,6 @@
     infinity: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12c0-2.2 1.8-4 4-2.5 1.3.9 1.7 2 2.5 2.5 2.2 1.5 4-.3 4-2.5s-1.8-4-4-2.5c-.8.5-1.2 1.6-2.5 2.5C8.8 16 7 14.2 7 12z"/></svg>',
     plug: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7v5"/><path d="M15 7v5"/><path d="M7 12h10"/><path d="M12 12v7"/><path d="M9 21h6"/></svg>',
     tent: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 4 9 16H3L12 4z"/><path d="M12 4v16"/></svg>',
-    // fallback tag/star
     tag: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 12l9 9 9-9-9-9z"/><path d="m12 3 3 3"/><circle cx="8.5" cy="8.5" r="1"/></svg>'
   };
 
@@ -380,6 +412,46 @@
     const key = iconForExtraName(name);
     const svg = EXTRA_ICONS[key] || EXTRA_ICONS.tag;
     return '<span class="extra-icon" title="' + escapeHtml(key) + '">' + svg + '</span>';
+  }
+
+  function descHtml(description) {
+    const full = String(description || '').trim();
+    if (!full) return '';
+    return (
+      '<p class="extra-desc" data-full="' + encodeURIComponent(full) + '" data-expanded="false">' +
+        '<span class="extra-desc-body"></span><span class="extra-toggle"> <button type="button" class="extra-more" aria-expanded="false">more</button></span>' +
+      '</p>'
+    );
+  }
+
+  function applyTruncation(el) {
+    if (!el || el.getAttribute('data-expanded') === 'true') return;
+    const full = decodeURIComponent(el.getAttribute('data-full') || '');
+    const body = el.querySelector('.extra-desc-body');
+    const toggle = el.querySelector('.extra-toggle');
+    const btn = el.querySelector('.extra-more');
+    if (!body) return;
+    const words = wordsOf(full);
+    const limit = wordLimit();
+    if (words.length <= limit) {
+      body.textContent = full;
+      if (toggle) toggle.hidden = true;
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'more';
+      }
+      return;
+    }
+    body.textContent = words.slice(0, limit).join(' ') + '…';
+    if (toggle) toggle.hidden = false;
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'more';
+    }
+  }
+
+  function applyAllTruncations() {
+    document.querySelectorAll('#extras-root .extra-desc[data-full]').forEach(applyTruncation);
   }
 
   function showGlobalPlaceholder(message) {
@@ -412,7 +484,7 @@
                 '</span>' +
                 '<span class="extra-price">' + escapeHtml(formatPrice(e.price, e.unit)) + '</span>' +
               '</div>' +
-              (e.description ? ('<p class="extra-desc">' + escapeHtml(e.description) + '</p>') : '') +
+              descHtml(e.description) +
             '</li>'
           )).join('') + '</ul>')
         : '<p class="empty-extras">No extras listed for this vehicle yet.</p>';
@@ -421,17 +493,48 @@
         : '';
       return (
         '<article class="vehicle-extras">' +
-          '<img class="vehicle-photo" src="' + escapeHtml(v.photo || ('images/' + v.listingId + '_1.jpg')) + '" alt="' + escapeHtml(v.name || '') + '" loading="lazy">' +
-          '<div>' +
-            '<h2 class="vehicle-name">“' + escapeHtml(v.name || '') + '”</h2>' +
-            '<p class="vehicle-model">' + escapeHtml(v.model || '') + '</p>' +
-            note +
-            listHtml +
-          '</div>' +
+          '<header class="vehicle-head">' +
+            '<img class="vehicle-photo" src="' + escapeHtml(v.photo || ('images/' + v.listingId + '_1.jpg')) + '" alt="' + escapeHtml(v.name || '') + '" loading="lazy">' +
+            '<div>' +
+              '<h2 class="vehicle-name">' + escapeHtml(v.name || '') + '</h2>' +
+              '<p class="vehicle-model">' + escapeHtml(v.model || '') + '</p>' +
+            '</div>' +
+          '</header>' +
+          note +
+          listHtml +
         '</article>'
       );
     }).join('');
+    applyAllTruncations();
   }
+
+  document.getElementById('extras-root').addEventListener('click', function(e) {
+    const btn = e.target.closest('.extra-more');
+    if (!btn) return;
+    const wrap = btn.closest('.extra-desc');
+    if (!wrap) return;
+    const body = wrap.querySelector('.extra-desc-body');
+    const toggle = wrap.querySelector('.extra-toggle');
+    const expanded = wrap.getAttribute('data-expanded') === 'true';
+    if (expanded) {
+      wrap.setAttribute('data-expanded', 'false');
+      applyTruncation(wrap);
+    } else {
+      body.textContent = decodeURIComponent(wrap.getAttribute('data-full') || '');
+      wrap.setAttribute('data-expanded', 'true');
+      if (toggle) toggle.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.textContent = 'less';
+    }
+  });
+
+  let resizeTimer = 0;
+  function onViewportChange() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyAllTruncations, 100);
+  }
+  window.addEventListener('resize', onViewportChange);
+  window.addEventListener('orientationchange', onViewportChange);
 
   fetch('extras.json', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : null))
