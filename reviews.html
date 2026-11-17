@@ -44,23 +44,36 @@
   }
   .hero {
     text-align:center;
-    padding:2.2rem 1.2rem 1.8rem;
+    padding:1.4rem 1.2rem 1.8rem;
     position:relative;
   }
+  .top-bar {
+    --brand-size: clamp(2rem, 6.4vw, 3.6rem);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:.85rem;
+    width:100%;
+    margin:0 0 1.15rem;
+  }
   .menu {
-    position:absolute;
-    top:.35rem; right:.15rem;
+    position:relative;
+    flex:0 0 auto;
     z-index:50;
+    display:flex;
+    align-items:center;
   }
   .menu-toggle {
     display:inline-flex;
     flex-direction:column;
     justify-content:center;
-    gap:5px;
-    width:2.75rem; height:2.75rem;
+    align-items:center;
+    gap:calc(var(--brand-size, 2.5rem) * .12);
+    width:calc(var(--brand-size, 2.5rem) * 1.05);
+    height:calc(var(--brand-size, 2.5rem) * 1.05);
     min-width:44px; min-height:44px;
     padding:0;
-    border-radius:12px;
+    border-radius:calc(var(--brand-size, 2.5rem) * .28);
     border:1px solid rgba(57,255,20,.45);
     background:rgba(5,7,5,.85);
     color:var(--neon);
@@ -83,7 +96,8 @@
   }
   .menu-toggle .bar {
     display:block;
-    width:1.15rem; height:2px;
+    width:calc(var(--brand-size, 2.5rem) * .42);
+    height:max(2px, calc(var(--brand-size, 2.5rem) * .07));
     margin:0 auto;
     border-radius:2px;
     background:currentColor;
@@ -122,20 +136,20 @@
   }
   .brand {
     display:block;
-    width:100%;
-    max-width:100%;
+    flex:1 1 auto;
+    min-width:0;
     box-sizing:border-box;
     font-family: Orbitron, Rajdhani, "Segoe UI", sans-serif;
     font-weight:800;
-    font-size:clamp(2rem, 6.4vw, 3.6rem);
-    letter-spacing:clamp(.06em, 1.8vw, .18em);
-    padding-left:clamp(.06em, 1.8vw, .18em);
+    font-size:var(--brand-size, clamp(2rem, 6.4vw, 3.6rem));
+    letter-spacing:clamp(.04em, 1.4vw, .16em);
     text-transform:uppercase;
-    text-align:center;
+    text-align:left;
     color:var(--neon);
     text-shadow:0 0 10px rgba(57,255,20,.7), 0 0 30px rgba(57,255,20,.35);
-    margin:0 auto .9rem;
-    line-height:1.15;
+    margin:0;
+    line-height:1.1;
+    overflow-wrap:normal;
     text-decoration:none;
   }
   .brand:hover,
@@ -249,6 +263,8 @@
 <body>
   <div class="wrap">
     <header class="hero">
+      <div class="top-bar">
+      <a class="brand" href="index.html">CyberTuro</a>
       <div class="menu" id="site-menu">
         <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel">
           <span class="bar" aria-hidden="true"></span>
@@ -261,7 +277,7 @@
           <a href="#" id="login-link" role="menuitem">Login</a>
         </div>
       </div>
-      <a class="brand" href="index.html">CyberTuro</a>
+      </div>
       <h1>Our Reviews</h1>
       <div class="hero-links">
         <a class="back-link" href="index.html">← Back to our fleet</a>
