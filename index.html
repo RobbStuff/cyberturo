@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CyberTuro — Here Is Our Fleet</title>
 <meta name="description" content="CyberTuro Tesla Cybertruck and Model Y fleet. Book on Turo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +19,18 @@
     --cyan:#00e5ff;
     --radius:18px;
     --site-header-h:2.75rem;
+    --fleet-note-size:clamp(.875rem, 2.8vw, 1rem);
+    /* Matches measured CyberTuro→NEW visible gap (brand mb .9rem + note vertical centering) */
+    --brand-stack-gap:calc(.9rem + (2.6rem - 1.4 * var(--fleet-note-size)) / 2 + .14rem);
+    --site-header-offset:calc(var(--site-header-h) + env(safe-area-inset-top, 0px));
   }
   * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+  html {
+    scroll-behavior:smooth;
+    overscroll-behavior-y:none;
+  }
   body {
+    overscroll-behavior-y:none;
     margin:0;
     font-family: Rajdhani, "Segoe UI", system-ui, -apple-system, sans-serif;
     color:var(--text);
@@ -42,19 +50,21 @@
     top:0;
     left:0;
     right:0;
-    z-index:300;
-    height:var(--site-header-h);
+    z-index:500;
+    height:var(--site-header-offset);
     display:flex;
     align-items:center;
     box-sizing:border-box;
-    padding:0 1rem;
-    background:var(--bg0);
+    padding:env(safe-area-inset-top, 0px) 1rem 0;
+    background:#050705;
     border-bottom:1px solid rgba(57,255,20,.12);
+    transform:none;
+    -webkit-transform:none;
   }
   .wrap {
     width:min(1200px, calc(100% - 2rem));
     margin:0 auto;
-    padding:var(--site-header-h) 0 4rem;
+    padding:var(--site-header-offset) 0 4rem;
     position:relative;
     z-index:1;
   }
@@ -115,7 +125,7 @@
     padding:0;
     text-align:center;
     font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:clamp(.875rem, 2.8vw, 1rem);
+    font-size:var(--fleet-note-size);
     font-weight:700;
     letter-spacing:.06em;
     color:#ff8c1a;
@@ -134,7 +144,7 @@
     text-align:center;
     color:var(--neon);
     text-shadow:0 0 10px rgba(57,255,20,.7), 0 0 30px rgba(57,255,20,.35);
-    margin:0 0 .9rem;
+    margin:var(--brand-stack-gap) 0 .9rem;
     line-height:1.1;
     overflow-wrap:normal;
     text-decoration:none;
