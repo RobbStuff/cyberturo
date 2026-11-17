@@ -173,8 +173,8 @@
   }
   .review {
     display:grid;
-    grid-template-columns:112px 1fr;
-    gap:1rem;
+    grid-template-columns:68px 1fr;
+    gap:.85rem;
     align-items:start;
     padding:1rem;
     border-radius:var(--radius);
@@ -182,16 +182,14 @@
     background:linear-gradient(180deg, rgba(57,255,20,.05), rgba(0,0,0,.28));
     box-shadow:0 0 18px rgba(57,255,20,.08);
   }
-  @media (max-width:520px) {
-    .review { grid-template-columns:1fr; }
-  }
   .review-photo {
-    width:100%;
-    aspect-ratio:4/3;
+    width:68px;
+    height:68px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:10px;
     border:1px solid rgba(57,255,20,.25);
     background:#030503;
+    flex-shrink:0;
   }
   .review-meta {
     display:flex;
