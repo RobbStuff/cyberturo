@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <title>CyberTuro — Our Reviews</title>
 <meta name="description" content="CyberTuro guest reviews for our Tesla Cybertruck and Model Y fleet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -254,29 +256,17 @@
     line-height:1.45;
     color:#efffef;
   }
-  .review-attribution {
-    margin:.1rem 0 0;
-    width:100%;
-    max-width:68px;
-    font-size:.62rem;
-    font-style:italic;
-    line-height:1.2;
+  .review-credit {
+    font-size:.92em;
     color:var(--muted);
-    text-align:center;
-    overflow-wrap:anywhere;
-    word-break:break-word;
+  }
+  .review-attribution {
+    font-style:italic;
+    color:var(--muted);
   }
   .review-date {
-    margin:0;
-    width:100%;
-    max-width:68px;
-    font-size:.58rem;
     font-style:normal;
-    line-height:1.2;
     color:var(--muted);
-    text-align:center;
-    overflow-wrap:anywhere;
-    word-break:break-word;
   }
   .review-more {
     display:inline;
@@ -408,11 +398,20 @@
     return String(text || '').trim().split(/\s+/).filter(Boolean);
   }
 
+  function isTouchTablet() {
+    // iPadOS 13+ may report as Mac; treat multi-touch / coarse pointer as tablet.
+    const multiTouch = (navigator.maxTouchPoints || 0) > 1;
+    const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    return multiTouch || !!coarse;
+  }
+
   function wordLimit() {
     const w = window.innerWidth;
-    if (w >= 1200) return 40;
-    if (w >= 768) return 20; // iPad
-    return 12;
+    if (w < 768) return 12; // phone
+    // Touch tablets (incl. large iPad landscape up to ~1366): 20 words.
+    if (isTouchTablet() && w <= 1366) return 20;
+    // Non-touch desktop (and anything wider): 40.
+    return 40;
   }
 
   function equalizeCollapsedHeights() {
@@ -438,11 +437,19 @@
     });
   }
 
-  function reviewTextHtml(fullText) {
+  function reviewTextHtml(fullText, firstName, when) {
     const full = String(fullText || '').trim();
+    let credit = '';
+    if (firstName || when) {
+      credit = ' <span class="review-credit">';
+      if (firstName) credit += '<span class="review-attribution">— ' + escapeHtml(firstName) + '</span>';
+      if (when) credit += (firstName ? ' ' : '') + '<span class="review-date">' + escapeHtml(when) + '</span>';
+      credit += '</span>';
+    }
     return (
       '<p class="review-text" data-full="' + encodeURIComponent(full) + '" data-expanded="false">' +
         '“<span class="review-text-body"></span><span class="review-toggle"> <button type="button" class="review-more" aria-expanded="false">more</button></span>”' +
+        credit +
       '</p>'
     );
   }
@@ -473,8 +480,19 @@
     }
   }
 
-  function applyAllTruncations() {
-    document.querySelectorAll('#reviews .review-text[data-full]').forEach(applyTruncation);
+  function applyAllTruncations(opts) {
+    const forceCollapse = !!(opts && opts.forceCollapse);
+    document.querySelectorAll('#reviews .review-text[data-full]').forEach((el) => {
+      if (forceCollapse) {
+        el.setAttribute('data-expanded', 'false');
+        const btn = el.querySelector('.review-more');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = 'more';
+        }
+      }
+      applyTruncation(el);
+    });
     equalizeCollapsedHeights();
   }
 
@@ -496,12 +514,6 @@
       const who = r.reviewerFirstName || r.reviewer || 'Guest';
       const firstName = String(r.reviewerFirstName || '').trim();
       const when = formatDate(r.date);
-      const attribution = firstName
-        ? ('<p class="review-attribution">— ' + escapeHtml(firstName) + '</p>')
-        : '';
-      const dateLine = when
-        ? ('<p class="review-date">' + escapeHtml(when) + '</p>')
-        : '';
       return (
         '<article class="review">' +
           '<div class="review-media">' +
@@ -509,15 +521,13 @@
               ? '<img class="review-photo" src="' + escapeHtml(img) + '" alt="' + escapeHtml(name) + '" loading="lazy">'
               : '<div class="review-photo" aria-hidden="true"></div>') +
             '<div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>' +
-            attribution +
-            dateLine +
           '</div>' +
           '<div class="review-body">' +
             '<div class="review-meta">' +
               '<span class="review-vehicle">' + escapeHtml(name) + '</span>' +
               '<span>' + escapeHtml(who) + '</span>' +
             '</div>' +
-            reviewTextHtml(r.text) +
+            reviewTextHtml(r.text, firstName, when) +
           '</div>' +
         '</article>'
       );
@@ -555,13 +565,17 @@
   function onViewportChange() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      applyAllTruncations();
+      // Re-measure limit after rotate/resize (collapse so word count updates).
+      applyAllTruncations({ forceCollapse: true });
     }, 100);
   }
   window.addEventListener('resize', onViewportChange);
   window.addEventListener('orientationchange', onViewportChange);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', onViewportChange);
+  }
 
-  fetch('reviews.json', { cache: 'no-store' })
+  fetch('reviews.json?v=trunc-20', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : []))
     .then(render)
     .catch(showPlaceholder);
