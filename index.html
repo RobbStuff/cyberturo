@@ -371,25 +371,35 @@
   .specs {
     display:flex; flex-direction:column; gap:.45rem;
   }
-  .spec-primary {
+  .spec-primary-row {
+    display:flex;
+    flex-wrap:nowrap;
+    gap:.45rem .7rem;
+    width:100%;
     margin:0;
+  }
+  .spec-primary-row > div {
+    flex:1 1 0;
+    min-width:0;
+    display:flex; flex-direction:column; gap:.1rem;
     padding:.55rem .65rem;
     border-radius:12px;
     background:rgba(57,255,20,.04);
     border:1px solid rgba(57,255,20,.16);
-    font-size:1rem;
-    font-weight:700;
-    color:#efffef;
-    line-height:1.35;
   }
-  .spec-primary .spec-label {
+  .spec-primary-row span {
     color:var(--muted);
     font-size:.72rem;
-    font-weight:500;
     text-transform:uppercase;
     letter-spacing:.08em;
     font-family: Orbitron, Rajdhani, sans-serif;
-    margin-right:.35rem;
+  }
+  .spec-primary-row strong {
+    font-size:clamp(.88rem, 2.6vw, 1rem);
+    font-weight:700;
+    color:#efffef;
+    line-height:1.25;
+    overflow-wrap:anywhere;
   }
   .spec-more { margin:0; }
   .spec-more > summary {
@@ -604,7 +614,7 @@
         <h2 class="custom-name">“Merlin”</h2>
         <p class="vehicle-name">2024 Tesla Cybertruck</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 325 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Base</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>325 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Base</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/truck-rental/united-states/melbourne-fl/tesla/cybertruck/2587824" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -641,7 +651,7 @@
         <h2 class="custom-name">“Maverick”</h2>
         <p class="vehicle-name">2024 Tesla Cybertruck</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 325 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Base</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>325 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Base</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/truck-rental/united-states/melbourne-fl/tesla/cybertruck/2740306" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -678,7 +688,7 @@
         <h2 class="custom-name">“Casper”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3307368" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -712,7 +722,7 @@
         <h2 class="custom-name">“Storm”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3307383" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -749,7 +759,7 @@
         <h2 class="custom-name">“Ruby”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3307398" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -786,7 +796,7 @@
         <h2 class="custom-name">“Rooster”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3307415" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -822,7 +832,7 @@
         <h2 class="custom-name">“Frosty”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3506536" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -851,7 +861,7 @@
         <h2 class="custom-name">“Goose”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3531702" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -886,7 +896,7 @@
         <h2 class="custom-name">“Blaze”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3563398" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -916,7 +926,7 @@
         <h2 class="custom-name">“Yeti”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 357 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>357 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Premium</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3595182" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -947,7 +957,7 @@
         <h2 class="custom-name">“Bandit”</h2>
         <p class="vehicle-name">2026 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">5 seats · 306 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Performance</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>5</strong></div><div role="listitem"><span>Range</span><strong>306 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>Performance</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3619928" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -984,7 +994,7 @@
         <h2 class="custom-name">“Cosmo”</h2>
         <p class="vehicle-name">2027 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">6 seats · 332 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>L Premium Launch Series</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>6</strong></div><div role="listitem"><span>Range</span><strong>332 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>L Premium Launch Series</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3943006" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article>
@@ -1020,7 +1030,7 @@
         <h2 class="custom-name">“Bubba”</h2>
         <p class="vehicle-name">2027 Tesla Model Y</p>
       </div>
-        <div class="specs"><p class="spec-primary">6 seats · 332 miles @ 100%</p><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>L Premium Launch Series</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
+        <div class="specs"><div class="spec-primary-row" role="list"><div role="listitem"><span>Seats</span><strong>6</strong></div><div role="listitem"><span>Range</span><strong>332 miles @ 100%</strong></div></div><details class="spec-more"><summary aria-label="More specs: trim, transmission, and powertrain"><span class="chev" aria-hidden="true"></span></summary><div class="spec-extra" role="list"><div role="listitem"><span>Trim</span><strong>L Premium Launch Series</strong></div><div role="listitem"><span>Transmission</span><strong>Automatic</strong></div><div role="listitem"><span>Powertrain</span><strong>Electric</strong></div></div></details></div>
         <div class="price-row"><a class="book" href="https://turo.com/us/en/suv-rental/united-states/melbourne-fl/tesla/model-y/3959789" target="_blank" rel="noopener noreferrer">Book me now</a></div>
       </div>
     </article></main>
