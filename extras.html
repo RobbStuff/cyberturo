@@ -228,8 +228,8 @@
     --extra-gap: .5rem;
     --extra-tile-min-h: 3.55rem;
     display:grid;
-    /* Exactly 2 equal columns on all screen sizes, filling content width. */
-    grid-template-columns:repeat(2, minmax(0, 1fr));
+    /* Phone: 1 full-width tile; iPad/desktop: 2 equal columns. */
+    grid-template-columns:minmax(0, 1fr);
     gap:var(--extra-gap);
     justify-content:stretch;
     justify-items:stretch;
@@ -238,6 +238,7 @@
   }
   @media (min-width:768px) {
     .extras-grid {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
       --extra-tile-min-h: 3.7rem;
       --extra-gap: .55rem;
     }
@@ -486,12 +487,12 @@
     if (!titles.length) return;
 
     const sample = grids[0];
-    const cols = 2; // exactly 2 equal columns on all breakpoints
+    const cols = window.innerWidth >= 768 ? 2 : 1; // phone 1 / iPad+desktop 2
     let nameSize = 0.85;
     let priceSize = 0.73;
     let padX = 0.65;
     let padY = 0.48;
-    const gap = window.innerWidth >= 768 ? 0.55 : 0.5;
+    const gap = cols === 2 ? 0.55 : 0.5;
 
     function remPx() {
       return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
@@ -530,7 +531,7 @@
         - (parseFloat(parentStyle.paddingRight) || 0)
     ) || sample.clientWidth || window.innerWidth;
 
-    // Largest readable font that keeps the longest title on one line in a 2-col cell.
+    // Largest readable font that keeps the longest title on one line in the cell.
     const fontSteps = [
       { name: 1.05, price: 0.88, padX: 0.75, padY: 0.55 },
       { name: 1.0, price: 0.84, padX: 0.72, padY: 0.55 },

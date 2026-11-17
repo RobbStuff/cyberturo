@@ -173,9 +173,14 @@
   }
   .reviews {
     display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
+    grid-template-columns:minmax(0, 1fr);
     gap:1rem;
-    align-items:start;
+    align-items:stretch;
+  }
+  @media (min-width:768px) {
+    .reviews {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
   }
   .reviews > .placeholder {
     grid-column:1 / -1;
@@ -191,6 +196,17 @@
     background:linear-gradient(180deg, rgba(57,255,20,.05), rgba(0,0,0,.28));
     box-shadow:0 0 18px rgba(57,255,20,.08);
     min-width:0;
+    box-sizing:border-box;
+  }
+  .review-body {
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    min-height:100%;
+  }
+  .review-footer {
+    margin-top:auto;
+    padding-top:.35rem;
   }
   .review-media {
     display:flex;
@@ -219,21 +235,6 @@
     line-height:1.1;
     color:#ffd54a;
     text-shadow:0 0 8px rgba(255,213,74,.35);
-  }
-  @media (max-width:767px) {
-    .reviews { gap:.75rem; }
-    .review {
-      grid-template-columns:48px minmax(0, 1fr);
-      gap:.55rem;
-      padding:.75rem .65rem;
-    }
-    .review-media,
-    .review-photo,
-    .review-stars { width:48px; }
-    .review-photo { height:48px; border-radius:8px; }
-    .review-stars { font-size:.5rem; }
-    .review-text { font-size:.98rem; }
-    .review-meta { font-size:.82rem; }
   }
   .review-meta {
     display:flex;
@@ -400,8 +401,31 @@
   function wordLimit() {
     const w = window.innerWidth;
     if (w >= 1200) return 40;
-    if (w >= 768) return 30;
+    if (w >= 768) return 20; // iPad
     return 12;
+  }
+
+  function equalizeCollapsedHeights() {
+    const cards = [...document.querySelectorAll('#reviews .review')];
+    if (!cards.length) return;
+    // Clear prior min-heights so natural collapsed heights can be measured.
+    cards.forEach((card) => {
+      card.style.minHeight = '';
+    });
+    // Measure only collapsed cards (expanded cards may grow taller).
+    let maxH = 0;
+    cards.forEach((card) => {
+      const text = card.querySelector('.review-text');
+      if (text && text.getAttribute('data-expanded') === 'true') return;
+      maxH = Math.max(maxH, card.getBoundingClientRect().height);
+    });
+    if (maxH < 1) return;
+    const shared = Math.ceil(maxH) + 'px';
+    cards.forEach((card) => {
+      const text = card.querySelector('.review-text');
+      if (text && text.getAttribute('data-expanded') === 'true') return;
+      card.style.minHeight = shared;
+    });
   }
 
   function reviewTextHtml(fullText) {
@@ -441,6 +465,7 @@
 
   function applyAllTruncations() {
     document.querySelectorAll('#reviews .review-text[data-full]').forEach(applyTruncation);
+    equalizeCollapsedHeights();
   }
 
   function render(reviews) {
@@ -467,6 +492,9 @@
       const dateLine = when
         ? ('<p class="review-date">' + escapeHtml(when) + '</p>')
         : '';
+      const footer = (attribution || dateLine)
+        ? ('<div class="review-footer">' + attribution + dateLine + '</div>')
+        : '';
       return (
         '<article class="review">' +
           '<div class="review-media">' +
@@ -475,19 +503,19 @@
               : '<div class="review-photo" aria-hidden="true"></div>') +
             '<div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>' +
           '</div>' +
-          '<div>' +
+          '<div class="review-body">' +
             '<div class="review-meta">' +
               '<span class="review-vehicle">' + escapeHtml(name) + '</span>' +
               '<span>' + escapeHtml(who) + '</span>' +
             '</div>' +
             reviewTextHtml(r.text) +
-            attribution +
-            dateLine +
+            footer +
           '</div>' +
         '</article>'
       );
     }).join('');
     applyAllTruncations();
+    requestAnimationFrame(equalizeCollapsedHeights);
   }
 
   document.getElementById('reviews').addEventListener('click', function(e) {
@@ -495,13 +523,18 @@
     if (!btn) return;
     const wrap = btn.closest('.review-text');
     if (!wrap) return;
+    const card = wrap.closest('.review');
     const body = wrap.querySelector('.review-text-body');
     const toggle = wrap.querySelector('.review-toggle');
     const expanded = wrap.getAttribute('data-expanded') === 'true';
     if (expanded) {
       wrap.setAttribute('data-expanded', 'false');
       applyTruncation(wrap);
+      // Restore shared collapsed height for this card.
+      equalizeCollapsedHeights();
     } else {
+      // Expanding: clear this card's min-height so it can grow; others keep shared height.
+      if (card) card.style.minHeight = '';
       body.textContent = decodeURIComponent(wrap.getAttribute('data-full') || '');
       wrap.setAttribute('data-expanded', 'true');
       if (toggle) toggle.hidden = false;
@@ -513,7 +546,9 @@
   let resizeTimer = 0;
   function onViewportChange() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(applyAllTruncations, 100);
+    resizeTimer = setTimeout(function() {
+      applyAllTruncations();
+    }, 100);
   }
   window.addEventListener('resize', onViewportChange);
   window.addEventListener('orientationchange', onViewportChange);
