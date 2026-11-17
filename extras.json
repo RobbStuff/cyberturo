@@ -1,0 +1,112 @@
+{
+  "placeholder": true,
+  "message": "Extras list coming soon",
+  "note": null,
+  "updatedAt": null,
+  "vehicles": [
+    {
+      "listingId": "2587824",
+      "name": "Merlin",
+      "model": "2024 Tesla Cybertruck",
+      "photo": "images/2587824_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "2740306",
+      "name": "Maverick",
+      "model": "2024 Tesla Cybertruck",
+      "photo": "images/2740306_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3307368",
+      "name": "Casper",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3307368_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3307383",
+      "name": "Storm",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3307383_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3307398",
+      "name": "Ruby",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3307398_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3307415",
+      "name": "Rooster",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3307415_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3506536",
+      "name": "Frosty",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3506536_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3531702",
+      "name": "Goose",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3531702_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3563398",
+      "name": "Blaze",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3563398_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3595182",
+      "name": "Yeti",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3595182_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3619928",
+      "name": "Bandit",
+      "model": "2026 Tesla Model Y",
+      "photo": "images/3619928_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3943006",
+      "name": "Cosmo",
+      "model": "2027 Tesla Model Y",
+      "photo": "images/3943006_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    },
+    {
+      "listingId": "3959789",
+      "name": "Bubba",
+      "model": "2027 Tesla Model Y",
+      "photo": "images/3959789_1.jpg",
+      "extras": [],
+      "extrasNote": null
+    }
+  ]
+}
