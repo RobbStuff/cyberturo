@@ -29,8 +29,8 @@ const FLEET = [
   { listingId: '3563398', name: 'Blaze', model: '2026 Tesla Model Y' },
   { listingId: '3595182', name: 'Yeti', model: '2026 Tesla Model Y' },
   { listingId: '3619928', name: 'Bandit', model: '2026 Tesla Model Y' },
-  { listingId: '3943006', name: 'Cosmo', model: '2027 Tesla Model Y' },
-  { listingId: '3959789', name: 'Bubba', model: '2027 Tesla Model Y' },
+  { listingId: '3943006', name: 'Cosmo', model: '2027 Tesla Model Y L' },
+  { listingId: '3959789', name: 'Bubba', model: '2027 Tesla Model Y L' },
 ];
 
 const NAME_BY_ID = Object.fromEntries(FLEET.map((v) => [v.listingId, v.name]));
