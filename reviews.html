@@ -180,6 +180,13 @@
     background:linear-gradient(180deg, rgba(57,255,20,.05), rgba(0,0,0,.28));
     box-shadow:0 0 18px rgba(57,255,20,.08);
   }
+  .review-media {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.3rem;
+    width:68px;
+  }
   .review-photo {
     width:68px;
     height:68px;
@@ -188,6 +195,18 @@
     border:1px solid rgba(57,255,20,.25);
     background:#030503;
     flex-shrink:0;
+  }
+  .review-stars {
+    display:block;
+    width:68px;
+    margin:0;
+    padding:0;
+    text-align:center;
+    font-size:.62rem;
+    letter-spacing:.02em;
+    line-height:1.1;
+    color:#ffd54a;
+    text-shadow:0 0 8px rgba(255,213,74,.35);
   }
   .review-meta {
     display:flex;
@@ -210,6 +229,25 @@
     font-size:1.08rem;
     line-height:1.45;
     color:#efffef;
+  }
+  .review-more {
+    display:inline;
+    margin:0;
+    padding:0;
+    border:0;
+    background:none;
+    color:var(--cyan);
+    font:inherit;
+    font-weight:600;
+    letter-spacing:.02em;
+    cursor:pointer;
+    text-decoration:none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .review-more:hover,
+  .review-more:focus-visible {
+    color:var(--neon);
+    outline:none;
   }
   .placeholder {
     text-align:center;
@@ -305,6 +343,25 @@
       '</div>';
   }
 
+  function wordsOf(text) {
+    return String(text || '').trim().split(/\s+/).filter(Boolean);
+  }
+
+  function reviewTextHtml(fullText) {
+    const words = wordsOf(fullText);
+    const quotedFull = '“' + String(fullText || '').trim() + '”';
+    if (words.length <= 12) {
+      return '<p class="review-text">' + escapeHtml(quotedFull) + '</p>';
+    }
+    const quotedPreview = '“' + words.slice(0, 12).join(' ') + '…”';
+    return (
+      '<p class="review-text" data-full="' + encodeURIComponent(quotedFull) + '" data-preview="' + encodeURIComponent(quotedPreview) + '" data-expanded="false">' +
+        '<span class="review-text-body">' + escapeHtml(quotedPreview) + '</span> ' +
+        '<button type="button" class="review-more" aria-expanded="false">more</button>' +
+      '</p>'
+    );
+  }
+
   function render(reviews) {
     const root = document.getElementById('reviews');
     const fiveStar = (Array.isArray(reviews) ? reviews : [])
@@ -324,20 +381,43 @@
       const when = formatDate(r.date);
       return (
         '<article class="review">' +
-          (img
-            ? '<img class="review-photo" src="' + escapeHtml(img) + '" alt="' + escapeHtml(name) + '" loading="lazy">'
-            : '<div class="review-photo" aria-hidden="true"></div>') +
+          '<div class="review-media">' +
+            (img
+              ? '<img class="review-photo" src="' + escapeHtml(img) + '" alt="' + escapeHtml(name) + '" loading="lazy">'
+              : '<div class="review-photo" aria-hidden="true"></div>') +
+            '<div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>' +
+          '</div>' +
           '<div>' +
             '<div class="review-meta">' +
-              '<span class="review-vehicle">“' + escapeHtml(name) + '”</span>' +
+              '<span class="review-vehicle">' + escapeHtml(name) + '</span>' +
               '<span>' + escapeHtml(who) + (when ? ' · ' + escapeHtml(when) : '') + '</span>' +
             '</div>' +
-            '<p class="review-text">' + escapeHtml(r.text) + '</p>' +
+            reviewTextHtml(r.text) +
           '</div>' +
         '</article>'
       );
     }).join('');
   }
+
+  document.getElementById('reviews').addEventListener('click', function(e) {
+    const btn = e.target.closest('.review-more');
+    if (!btn) return;
+    const wrap = btn.closest('.review-text');
+    if (!wrap) return;
+    const body = wrap.querySelector('.review-text-body');
+    const expanded = wrap.getAttribute('data-expanded') === 'true';
+    if (expanded) {
+      body.textContent = decodeURIComponent(wrap.getAttribute('data-preview') || '');
+      wrap.setAttribute('data-expanded', 'false');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'more';
+    } else {
+      body.textContent = decodeURIComponent(wrap.getAttribute('data-full') || '');
+      wrap.setAttribute('data-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.textContent = 'less';
+    }
+  });
 
   fetch('reviews.json', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : []))
