@@ -284,7 +284,7 @@
   function render(reviews) {
     const root = document.getElementById('reviews');
     const fiveStar = (Array.isArray(reviews) ? reviews : [])
-      .filter((r) => Number(r.rating) === 5 && r.text)
+      .filter((r) => Number(r.rating ?? r.stars) === 5 && r.text)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     if (!fiveStar.length) {
@@ -295,8 +295,8 @@
     root.innerHTML = fiveStar.map((r) => {
       const id = String(r.listingId || '');
       const name = NAMES[id] || r.vehicleName || 'Fleet vehicle';
-      const img = id ? ('images/' + id + '_1.jpg') : '';
-      const who = r.reviewerFirstName || 'Guest';
+      const img = r.photo || (id ? ('images/' + id + '_1.jpg') : '');
+      const who = r.reviewerFirstName || r.reviewer || 'Guest';
       const when = formatDate(r.date);
       return (
         '<article class="review">' +

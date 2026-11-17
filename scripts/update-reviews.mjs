@@ -365,13 +365,24 @@ async function main() {
   const existingReviews = readJsonSafe(reviewsPath, []);
   const existingExtras = readJsonSafe(extrasPath, emptyExtrasDoc());
 
+  const existingReviewCount = Array.isArray(existingReviews) ? existingReviews.length : 0;
+  const existingHasRealExtras =
+    existingExtras &&
+    typeof existingExtras === 'object' &&
+    existingExtras.placeholder === false &&
+    Array.isArray(existingExtras.vehicles) &&
+    existingExtras.vehicles.some((v) => Array.isArray(v.extras) && v.extras.length > 0);
+
   info('Fetching public Turo reviews (read-only)…');
   const { anyOk: reviewsOk, reviews } = await fetchReviews();
+  // Never wipe real reviews with an empty result (Turo WAF/block/parse miss).
   if (!reviewsOk || reviews.length === 0) {
     warn(
-      reviewsOk
-        ? 'No 5-star reviews parsed; keeping existing reviews.json'
-        : 'Could not reach public Turo review data; keeping existing reviews.json',
+      !reviewsOk
+        ? 'Could not reach public Turo review data; keeping existing reviews.json'
+        : existingReviewCount > 0
+          ? `No 5-star reviews parsed; keeping existing ${existingReviewCount} reviews.json entries`
+          : 'No 5-star reviews parsed; keeping existing reviews.json',
     );
   } else {
     maybeWrite(reviewsPath, reviews, 'reviews.json');
@@ -379,11 +390,14 @@ async function main() {
 
   info('Fetching public Turo extras (read-only)…');
   const { anyOk: extrasOk, doc: extrasDoc, total: extrasTotal } = await fetchExtras();
+  // Never replace real extras with an empty/placeholder doc when Turo blocks.
   if (!extrasOk || extrasTotal === 0) {
     warn(
-      extrasOk
-        ? 'No extras parsed; keeping existing extras.json'
-        : 'Could not reach public Turo extras data; keeping existing extras.json',
+      !extrasOk
+        ? 'Could not reach public Turo extras data; keeping existing extras.json'
+        : existingHasRealExtras
+          ? 'No extras parsed; keeping existing real extras.json'
+          : 'No extras parsed; keeping existing extras.json',
     );
     if (!existsSync(extrasPath)) {
       writeJson(extrasPath, emptyExtrasDoc());

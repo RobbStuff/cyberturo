@@ -1,1 +1,1370 @@
-[]
+[
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Eric",
+    "date": "November 16, 2026",
+    "rating": 5,
+    "text": "Everything was absolutely amazing with the host, very thorough, literally my only gripes are Turo\u2019s own UI.",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Matthew",
+    "date": "November 14, 2026",
+    "rating": 5,
+    "text": "Car was great! Self driving was really handy in Orlando. Naree is a great communicator and provided plenty if information.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Michal",
+    "date": "November 12, 2026",
+    "rating": 5,
+    "text": "Amazing car and service! Naree is so responsive and helpful with anything you might need. The new FSD is absolutely breathtaking, and now I\u2019m getting a Tesla of my own! If you\u2019re trying to decide whether to buy a Tesla, I highly recommend renting from Naree. Their cars are new, nice, and clean, and they\u2019ll walk you through everything you need to know as a first-time Tesla driver!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Jennifer",
+    "date": "November 8, 2026",
+    "rating": 5,
+    "text": "Great host and perfect car. No issues or concerns during our use.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Fernando",
+    "date": "November 4, 2026",
+    "rating": 5,
+    "text": "My host was great. Will definitely rent from her again on my next trip.",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Ajit",
+    "date": "October 31, 2026",
+    "rating": 5,
+    "text": "It was a wonderful experience; self-driving was invaluable. Naree\u2019s Tesla Model Y was clean and he communication every step of the process was amazing.",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Juraj",
+    "date": "October 29, 2026",
+    "rating": 5,
+    "text": "Amazing experience!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Cassio",
+    "date": "October 28, 2026",
+    "rating": 5,
+    "text": "O carro estava impec\u00e1vel, o suporte para d\u00favidas foi sempre r\u00e1pido e a experi\u00eancia muito boa.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Patrick",
+    "date": "October 27, 2026",
+    "rating": 5,
+    "text": "The vehicle is excellent and really helps with getting around what can be a confusing Orlando with all the theme parks. Spacious, smooth, and clean cyber truck was perfect for getting all around what would normally be stressful parking lots, parking structures, and directions. Naree was super responsive and had everything ready to go. She even checked on how things were going through the trip. I would highly recommend this for anyone traveling to Orlando. Added bonus if you have kids: the drives to the theme parks is almost as exciting as the rides.",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Mary Beth",
+    "date": "October 25, 2026",
+    "rating": 5,
+    "text": "Excellent communication, and we really enjoyed the vehicle!",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "William",
+    "date": "October 25, 2026",
+    "rating": 5,
+    "text": "\u2b50\u2b50\u2b50\u2b50\u2b50We absolutely loved Bandit! My whole family enjoyed this Tesla, and it made our Orlando vacation even better. The self-driving capability is incredible, the ride is unbelievably smooth, and the seats are so comfortable. It was honestly one of the most enjoyable cars I\u2019ve ever driven! The host was fantastic! Super friendly, helpful, and easy to communicate with throughout the entire trip. You can tell she really cares about making sure her guests have a great experience. The only thing I\u2019d recommend is allowing some extra time for drop-off, since airport parking can be a little tricky. I should have planned a bit more time for that myself. Other than that, everything was wonderful! We had such a great experience, and my family was sad to give Bandit back. I would absolutely rent this Tesla again and highly recommend it to anyone visiting Orlando. Thank you for such a great experience!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "zachary",
+    "date": "October 24, 2026",
+    "rating": 5,
+    "text": "Cleanest car we have rented on turo. Host was easy to contact. Had no issues. Would highly recommend",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Robert",
+    "date": "October 22, 2026",
+    "rating": 5,
+    "text": "Literally the most top-of-the-line Tesla currently sold, with FREE FSD, and a FREE mobile charger (so you can plug into a standard outlet in the garage)! Both things I usually have to explicitly ask for, and usually have to pay for, just here by default. The host was very communicative, and pickup was easy. The car was very clean, I even got some \u201cNice car!\u201d shouts while in the parking lot. If this is your first time driving a Tesla, this is the one to get.",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Griffin",
+    "date": "October 14, 2026",
+    "rating": 5,
+    "text": "The magic battery car brought me over 1000 miles through 5 states with maybe 3 miles of myself driving. It was transformational.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Ashley",
+    "date": "October 13, 2026",
+    "rating": 5,
+    "text": "A",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Oscar",
+    "date": "October 13, 2026",
+    "rating": 5,
+    "text": "We had a great time with the Tesla Model Y during our trip to Florida. The car was fun to drive, and having FSD was honestly one of the best parts. Since we weren't familiar with the area, it really came in handy. We actually used it for most of our driving, and it made getting around so much easier. We really enjoyed the car! The host was great too, always responsive and very clear with instructions. Everything went smoothly, and I wouldn't hesitate to rent from them again whenever I'm back in Florida.",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "David",
+    "date": "October 12, 2026",
+    "rating": 5,
+    "text": "The Birthday kid was well pleased and our family enjoyed the experience. Thank you so much for your customer service, availability, professionalism, and responsiveness. 10 starts if it was possible. 5 stars rating for sure. Definitely will book again with Naree!!",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Caique",
+    "date": "October 12, 2026",
+    "rating": 5,
+    "text": "Clean car and easy pickup.",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Torri",
+    "date": "October 12, 2026",
+    "rating": 5,
+    "text": "I want to say 4.5 stars. The car and host were great!The only thing I didn\u2019t like is the pickup process. It was a real hassle and took so long and the bus stop number was wrong so I spent so much time walking around looking for it before a man told me B17 didn\u2019t exist anymore. Then it was dark and raining and the car was parked all the way in row 20 which took forever to locate on foot with a heavy suitcase. After a long day of travel, I didn\u2019t want to spend an extra 45 minutes trying to find the car. Then, I had to pay $14 to leave the parking lot.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Jordan",
+    "date": "October 5, 2026",
+    "rating": 5,
+    "text": "Had an awesome experience renting from Naree! Communication was super fast from start to finish, which made everything so easy. Finding the car at Melbourne Airport was a total breeze right after landing. The Tesla was super clean and drove like a dream. The real star of the show was Full Self Driving though. We covered over 2,600 miles all the way to Texas with zero major interventions. The only time we actually took over was to park in a better spot! If you want a trip with an amazing car, you're in good hands booking with Naree.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Varsha",
+    "date": "October 3, 2026",
+    "rating": 5,
+    "text": "NIC clean car.. and accurate communication. Highly recommend.",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Kyle",
+    "date": "October 2, 2026",
+    "rating": 5,
+    "text": "Very clean, very fun car. Host was very responsive. I\u2019ll be renting again",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Jose",
+    "date": "September 30, 2026",
+    "rating": 5,
+    "text": "Naree was an awesome host! We had a lot of fun with the cyber! 1000% recommend",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Alessandro",
+    "date": "September 23, 2026",
+    "rating": 5,
+    "text": "\u00d3timo carro. Recomendo! Respostas r\u00e1pidas. Anfitri\u00e3o muito cuidadoso para que a viagem seja bem tranquila.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Adrien",
+    "date": "September 20, 2026",
+    "rating": 5,
+    "text": "Great car and great service from Naree. FSD is amazing and you\u2019ll never want to drive a car without it again! Highly recommend this host and will be renting from them again.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Alessandro",
+    "date": "September 17, 2026",
+    "rating": 5,
+    "text": "Muito boa!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Juan Carlos",
+    "date": "September 14, 2026",
+    "rating": 5,
+    "text": "Great rental ! Perfect communication!",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Jean",
+    "date": "September 12, 2026",
+    "rating": 5,
+    "text": "Car is amazing, so is the host. Second time renting from her and it wont be the last. Very communicative host and always aware of anything I may need.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "William",
+    "date": "September 11, 2026",
+    "rating": 5,
+    "text": "Outstanding. First Tesla. At first was overwhelmed. Then I loved it. Get the app! Worth it.",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Juan",
+    "date": "September 7, 2026",
+    "rating": 5,
+    "text": "Car was very clean, parked close to the terminal, and gave no issues during the rental. A host!",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Jocelyn",
+    "date": "September 5, 2026",
+    "rating": 5,
+    "text": "Perfection as always! Beautiful clean reliable car and attentive service from the owner.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Michael",
+    "date": "September 5, 2026",
+    "rating": 5,
+    "text": "Great car to rent!! FSD was amazing!!",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Matthew",
+    "date": "September 4, 2026",
+    "rating": 5,
+    "text": "Amazing vehicle.",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Allen",
+    "date": "September 3, 2026",
+    "rating": 5,
+    "text": "Awesome Turo renter was super helpful for our first Tesla rental",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Juan",
+    "date": "September 2, 2026",
+    "rating": 5,
+    "text": "Excellent ride super clean vehicle, host was very helpful providing details and info requested. Would definitely recommend this host",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "TETYANA",
+    "date": "September 2, 2026",
+    "rating": 5,
+    "text": "Very clean beautiful Tesla, everything went smooth for us renting it!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Ashley",
+    "date": "August 26, 2026",
+    "rating": 5,
+    "text": "Great car! Amazing host! Highly recommend! Five star service!",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Michael",
+    "date": "August 24, 2026",
+    "rating": 5,
+    "text": "From start to finish the booking was simple, instructions were clear and the rental was clean. I\u2019d give this 10 stars if I could.",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Gabriel",
+    "date": "August 24, 2026",
+    "rating": 5,
+    "text": "Naree is the best, car is great, FSD is great. That was an awesome trip thanks to her. Also, my flight was delayed she helped me. If you want to have fun rent this car.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Nathalie",
+    "date": "August 22, 2026",
+    "rating": 5,
+    "text": "The car was in immaculate condition and the host was very informative and helpful. Thank you very much!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Cyle",
+    "date": "August 19, 2026",
+    "rating": 5,
+    "text": "Full Self Driving was a life saver for my long road trip!",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Nico",
+    "date": "August 18, 2026",
+    "rating": 5,
+    "text": "Goose was a pleasure to ride with. It took away a lot of traffic-stress \ud83d\ude42. Definitely a highlight in our trip and it was also our first Tesla experience. The host was great and it was a pleasure to meet Robb at the drop-off. Thx \ud83d\udc4d",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "James",
+    "date": "August 16, 2026",
+    "rating": 5,
+    "text": "Great car, FSD was great and made the whole experience over the top.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Jennifer",
+    "date": "August 15, 2026",
+    "rating": 5,
+    "text": "Great hosts. Easy to communicate with. Lots of information and easy to find and get into car. First time Turo user and I\u2019ll definitely rent from this host again. Car was also freshly cleaned and well kept.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Jocelyn",
+    "date": "August 15, 2026",
+    "rating": 5,
+    "text": "The car is pristine as always.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Rogier",
+    "date": "August 13, 2026",
+    "rating": 5,
+    "text": "Great and fast communiction from Naree! FSD was fantastic for our trip in the USA!",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Christian",
+    "date": "August 9, 2026",
+    "rating": 5,
+    "text": "Naree is an amazing host! Great service and great care! Will be renting again very soon! Thank you!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Chad",
+    "date": "July 29, 2026",
+    "rating": 5,
+    "text": "What a great car. FSD was a treat, highly recommended.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Reynell",
+    "date": "July 27, 2026",
+    "rating": 5,
+    "text": "Naree was a fantastic host! The 2026 Tesla Performance Model Y (Bandit) was top-of-the-line, immaculately clean inside and out, and offered at an unbeatable price for the quality. Communication was top-tier\u2014Naree gave super detailed instructions on everything, including parking navigation and Turo policy guidelines regarding potential fees, so there were zero surprises. The pick-up location wasn't ideal, but given Turo's airport/location policies, it was managed as seamlessly as possible thanks to her clear directions. As a Tesla owner myself, I always prefer driving one when traveling for the comfort and familiarity, and having Full Self-Driving (FSD) included made getting around Orlando infinitely easier. I highly recommend Naree and Bandit. I will definitely be reaching out to book with her again next time I'm back in town. Thank you for everything, Naree!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Marvin",
+    "date": "July 27, 2026",
+    "rating": 5,
+    "text": "Excellent condition. Very clean. Wonderful host.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Amanda",
+    "date": "July 26, 2026",
+    "rating": 5,
+    "text": "Great car! Host was great at communicating and doing so quickly.",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Jordan",
+    "date": "July 25, 2026",
+    "rating": 5,
+    "text": "Great communication simple and easy!",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Jamal",
+    "date": "July 19, 2026",
+    "rating": 5,
+    "text": "This was amazing experience I got the vehicle to surprise my son and he loved it and host was amazing",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Jocelyn",
+    "date": "July 18, 2026",
+    "rating": 5,
+    "text": "I love renting from this particular owner! The cars are always in pristine condition. They are very communicative and quick to answer any questions. I travel for work twice a month and always rent from her because of the quality and consistency of the cars and their service.",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Russell",
+    "date": "July 18, 2026",
+    "rating": 5,
+    "text": "Everything was excellent and communication was very good. Really an excellent car.",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Lukas",
+    "date": "July 14, 2026",
+    "rating": 5,
+    "text": "Both the car and host are the best I've ever experienced on Turo. I could not recommend them enough, absolutely wonderful from start to finish!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Jean-Pierre",
+    "date": "July 11, 2026",
+    "rating": 5,
+    "text": "Naree is a very nice host, quick answers, always attentive to any request. Car is perfect with latest FSD.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "William Alexander",
+    "date": "July 9, 2026",
+    "rating": 5,
+    "text": "Great experience, quick response! Great vehicle and very clean. Definitely would recommend",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Stephon",
+    "date": "July 8, 2026",
+    "rating": 5,
+    "text": "Easy pick up, very responsive Host, and very patient with first time EV users, i ended up buying a Tesla before i could even drop the rental off.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Amir Ali",
+    "date": "July 8, 2026",
+    "rating": 5,
+    "text": "Great experience and awesome service and support :)",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Robert",
+    "date": "July 6, 2026",
+    "rating": 5,
+    "text": "The Tesla was in perfect shape, communication with the host an A , would definitely rent from Naree again.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "JJ",
+    "date": "June 30, 2026",
+    "rating": 5,
+    "text": "Bandit was amazing best driving experience I ever had and the host was amazing fast response and very helpful 10/10",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Ferdinand",
+    "date": "June 29, 2026",
+    "rating": 5,
+    "text": "Great host, very clean and superior Tesla car with full self driving.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Jocelyn",
+    "date": "June 27, 2026",
+    "rating": 5,
+    "text": "I love renting from this host! The cars are always in perfect condition and she is incredibly helpful and quick to answer questions if I have any.",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Joshua Ryan",
+    "date": "June 26, 2026",
+    "rating": 5,
+    "text": "Perfect host experience. I would happily be Naree\u2019s guest again!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Nicole",
+    "date": "June 23, 2026",
+    "rating": 5,
+    "text": "Host was awesome and very helpful with the whole rental. Car was amazing and FSD is crazy good!! Thanks for everything!!",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Whittney",
+    "date": "June 15, 2026",
+    "rating": 5,
+    "text": "Fantastic car - incredibly responsive host.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Paul",
+    "date": "June 15, 2026",
+    "rating": 5,
+    "text": "Awesome host! Super clean car! Will return!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Tony",
+    "date": "June 8, 2026",
+    "rating": 5,
+    "text": "Excellent rental in perfect condition. Great communications and add-on options. Would highly recommend if your are in Florida and need a Tesla Y!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Josh",
+    "date": "June 7, 2026",
+    "rating": 5,
+    "text": "Great communication, great (and fun) car... would absolutely rent again in the future!",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Jocelyn",
+    "date": "June 6, 2026",
+    "rating": 5,
+    "text": "These Teslas are always in incredible condition. I really enjoy renting them when I have to travel for work, especially with the self driving option!",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Sangty",
+    "date": "June 4, 2026",
+    "rating": 5,
+    "text": "Nice clean new Model Y Performance. Would rent again in the future!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Natan",
+    "date": "June 1, 2026",
+    "rating": 5,
+    "text": "Very smooth experience! I\u2019ll return to Orlando in October and rent again for sure",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Kenneth",
+    "date": "June 1, 2026",
+    "rating": 5,
+    "text": "Excellent. Always available, helpful and cordial \ud83d\udc4d\ud83d\udc4d",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Stephen",
+    "date": "May 28, 2026",
+    "rating": 5,
+    "text": "Good communication, easy pick up, FSD was great on this model.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3619928",
+    "reviewerFirstName": "Trong",
+    "date": "May 27, 2026",
+    "rating": 5,
+    "text": "Naree was incredibly professional and completely seamless from start to finish. The booking and pickup process couldn't have been easier. The highlight was definitely the Tesla (Bandit) the Full Self-Driving (FSD) capability was absolutely awesome and made navigating around a total breeze. I had an excellent experience all around and highly recommend booking through Turo!",
+    "vehicleName": "Bandit",
+    "photo": "images/3619928_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Brogen",
+    "date": "May 26, 2026",
+    "rating": 5,
+    "text": "Car quality was pristine and very luxurious! We adored working with Naree she was very descriptive of all the details and super communicative!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Cameron",
+    "date": "May 25, 2026",
+    "rating": 5,
+    "text": "An amazing host and amazing vehicle. Very informative so there was zero confusion and responsive enough to handle any issues almost immediately. Will definitely book again!",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Phillip",
+    "date": "May 25, 2026",
+    "rating": 5,
+    "text": "Superb host. Terrific communication. Amazing experience with a beautiful, well-maintained, FSD Tesla Model Y. If you haven\u2019t experienced the full self-drive capabilities, treat yourself! Will rent from this host again.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Raam",
+    "date": "May 24, 2026",
+    "rating": 5,
+    "text": "The Tesla was great! Pickup was easy. Host was very communicative. Would definitely rent again.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Chou ting yu",
+    "date": "May 22, 2026",
+    "rating": 5,
+    "text": "Really great Tesla experience. The host is very attentive and provided us with a very clean car. They also explained all the car locations and return details clearly, which made everything very reassuring and convenient for us as tourists. We also did our best to return the car in very clean condition. The Tesla with FSD 14.3 is extremely convenient and very user-friendly for travelers. We didn\u2019t really need to understand U. S. traffic rules in detail since the car handles everything itself \ud83d\udc4d\ud83d\udc4d\ud83d\udc4d",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Brendon Hudson",
+    "date": "May 18, 2026",
+    "rating": 5,
+    "text": "Amazing trip! The host is very good, and the car, the best of the world, perfect FSD, and the experience with the app is fantastic, with summon, navigation etc. The one way trip worked perfectly, I combined with the host, I get the car on MCO and dropped in the port canaveral for a cruise, thanks for all!",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Kevin",
+    "date": "May 17, 2026",
+    "rating": 5,
+    "text": "Easy and friendly, would rebook!",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Jocelyn",
+    "date": "May 16, 2026",
+    "rating": 5,
+    "text": "I love renting from this host! She\u2019s very helpful and I always have an amazing experience. The cars are extremely clean and well taken care of. I travel a lot for work and I always prefer to rent from her.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Jeremy",
+    "date": "May 15, 2026",
+    "rating": 5,
+    "text": "Really nice car, fast and great communication with the host also very friendly.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Britney",
+    "date": "May 11, 2026",
+    "rating": 5,
+    "text": "Wonderful host!!!!",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Bryan",
+    "date": "May 11, 2026",
+    "rating": 5,
+    "text": "Best car and hospitality",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "AKIKO",
+    "date": "May 5, 2026",
+    "rating": 5,
+    "text": "Tesla\u2019s FSD made the trip amazing from day one, even in an unfamiliar city. Loved it!",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Ricardo",
+    "date": "May 3, 2026",
+    "rating": 5,
+    "text": "Great Car",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Dereginald",
+    "date": "May 3, 2026",
+    "rating": 5,
+    "text": "Naree was amazing. The communication was consistent, and the car was great!",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "David",
+    "date": "May 3, 2026",
+    "rating": 5,
+    "text": "AMAZING CAR, AMAZING HOST!!! Coolest experience with Turo I\u2019ve ever had!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Alexander",
+    "date": "May 2, 2026",
+    "rating": 5,
+    "text": "Great car, awesome host with very quick response times. Tesla Full Self Driving works great with the car. So easy to get around in Orlando. I can highly recommend this clean Tesla!",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Reza Bardia",
+    "date": "April 28, 2026",
+    "rating": 5,
+    "text": "The car was amazing and the FSD made my life so much easier. The car was very clean. She helped me change my reservation to an earlier time and guided me with step\u2011by\u2011step directions. I highly recommend her and this car.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Robert",
+    "date": "April 27, 2026",
+    "rating": 5,
+    "text": "Great communication! Car was clean and delivered as expected!! Thank you for being a great host",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Joseph",
+    "date": "April 26, 2026",
+    "rating": 5,
+    "text": "Best Tesla rental I have had great experience. You should try to FSD and the host was amazing.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Ronaldo",
+    "date": "April 25, 2026",
+    "rating": 5,
+    "text": "Thanks family loved the car!!!",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Sonny",
+    "date": "April 25, 2026",
+    "rating": 5,
+    "text": "Absolutely fantastic experience with this host! From the very first message, their communication was outstanding\u2014super responsive, clear, and helpful with all the details. The car was exactly as described, spotless, and ready to go right on time. Pickup and drop-off were a breeze with no issues at all. This host really went above and beyond to make everything smooth and stress-free. I felt completely taken care of the entire time. Would definitely rent from them again and highly recommend them to anyone looking for a reliable, hassle-free Turo rental. Thank you",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Carlos",
+    "date": "April 24, 2026",
+    "rating": 5,
+    "text": "Great communication. Clean car excellent drive. Would recommend.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Fabian",
+    "date": "April 20, 2026",
+    "rating": 5,
+    "text": "Incredible car",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Sean",
+    "date": "April 19, 2026",
+    "rating": 5,
+    "text": "Great car and better value for the Tesla 2026 Model Y. Great communication throughout the rental process. Highly recommend. If you are going to be in the Orlando area make sure you book this car.",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Jose",
+    "date": "April 12, 2026",
+    "rating": 5,
+    "text": "Pickup location was easy to get to. There is a shuttle bus that will take you to the parking lot. Car was clean and really fun to drive. Full self-driving is amazing and you rarely have to take control. If anything is a little too careful sometimes.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Ian",
+    "date": "April 12, 2026",
+    "rating": 5,
+    "text": "The car was in like-new condition! Communication with host was great. I would definitely rent this vehicle again! Also to note, some Tesla\u2019s here do t have Full Self Drive enabled. This one does\u2026 and that\u2019s a huge plus.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Remulo",
+    "date": "April 11, 2026",
+    "rating": 5,
+    "text": "Naree is an absolutely fantastic host and the 2024 Cybertruck was the highlight of our family trip to Orlando! The truck was spotless and an incredible experience to drive. Naree\u2019s communication was excellent from start to finish\u2014she was extremely proactive, helpful with Supercharger tips, and made sure we had everything we needed. Getting the Tesla App extra is definitely worth it. I highly recommend booking with her and would definitely rent again!",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "James",
+    "date": "April 5, 2026",
+    "rating": 5,
+    "text": "Great car - loved it!",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Christian",
+    "date": "March 30, 2026",
+    "rating": 5,
+    "text": "The family loved the car!!! Most definitely will be looking to purchase one because of this weekend!!!! Best price on Turo with a great experience!!!",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Nariman",
+    "date": "March 30, 2026",
+    "rating": 5,
+    "text": "Car is great! Full Self Driving is a must to experience Tesla. Too many rules and messages though- 30 messages from the host within 4 days is overboard I think.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Michael",
+    "date": "March 29, 2026",
+    "rating": 5,
+    "text": "Great host, great car. FSD is amazing Lots of messages",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Anthony",
+    "date": "March 29, 2026",
+    "rating": 5,
+    "text": "Great experience with host and amazing car!",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Kenny",
+    "date": "March 27, 2026",
+    "rating": 5,
+    "text": "Excellent service, excellent vehicle. Highly recommend!",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Gerardo",
+    "date": "March 26, 2026",
+    "rating": 5,
+    "text": "Naree was a great host! Car was clean and she made it super easy to find everything we needed! Will be renting with her again on our next trip!",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Marc",
+    "date": "March 24, 2026",
+    "rating": 5,
+    "text": "Pristine vehicle. Great communication",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Michael",
+    "date": "March 23, 2026",
+    "rating": 5,
+    "text": "Great car, very clean.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Artterrace",
+    "date": "March 23, 2026",
+    "rating": 5,
+    "text": "This vehicle is a beauty and the driving experience was fantastic. Naree was very helpful throughout our trip and the communication was splendid.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Philip",
+    "date": "March 23, 2026",
+    "rating": 5,
+    "text": "They were very responsible and responsive. This was a great car, especially with the self-driving feature which took all the stress out of driving in Orlando.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Michael",
+    "date": "March 22, 2026",
+    "rating": 5,
+    "text": "Great clean great vehicle I highly recommend. Host is nice and welcoming. If I could make a recommendation it would be to limit the amount of automated texts throughout the whole trip it seemed a bit excessive but it\u2019s not a big deal.",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Jason",
+    "date": "March 21, 2026",
+    "rating": 5,
+    "text": "Great car! Responsive and helpful host.",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Matt David",
+    "date": "March 20, 2026",
+    "rating": 5,
+    "text": "Great host and vehicle.",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3595182",
+    "reviewerFirstName": "Rahul",
+    "date": "March 20, 2026",
+    "rating": 5,
+    "text": "Amazing vehicle. Amazing host.",
+    "vehicleName": "Yeti",
+    "photo": "images/3595182_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Dhruv",
+    "date": "March 19, 2026",
+    "rating": 5,
+    "text": "Can\u2019t get any better. Everything was fantastic. Book this car, spotless, non smoking. Full self driving",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Ashlee",
+    "date": "March 14, 2026",
+    "rating": 5,
+    "text": "I enjoyed the trip. Car was clean. Didn't get to use the cooler but having a stroller included was game changing for our Disney day. She was super responsive. Thank you\ud83d\udc97",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Jocelyn",
+    "date": "March 13, 2026",
+    "rating": 5,
+    "text": "The car was so much fun. The owner was very helpful as a first time Tesla driver.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Morten",
+    "date": "March 8, 2026",
+    "rating": 5,
+    "text": "It has been a great pleasure to rent Naree's brand new Tesla Model Y. Everything has been perfect. Good communication from booking the car to dropping it off. Easy to pick up at MCO airport and easy to drop off. Being able to have the car in my own Tesla app was a big plus.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "David",
+    "date": "March 7, 2026",
+    "rating": 5,
+    "text": "All good",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Tony",
+    "date": "March 1, 2026",
+    "rating": 5,
+    "text": "The host was overly communicative which was much appreciated. The car was clean and charged and I was always informed of what I needed to do in terms of pickup and drop off. Will be renting again in the future.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "sam",
+    "date": "February 23, 2026",
+    "rating": 5,
+    "text": "It requires patience at first, but once you get used to it, it's a great experience.",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Mark",
+    "date": "February 23, 2026",
+    "rating": 5,
+    "text": "excellent host. very helpful",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Orpheas",
+    "date": "February 21, 2026",
+    "rating": 5,
+    "text": "Thank you! Great car and service. Highly Recommended",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Min Ji",
+    "date": "February 21, 2026",
+    "rating": 5,
+    "text": "Car is super clean and new, and the instructions were in detail and clear. I would recommend to purchase toys and games to use your phone as the key",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Rafael",
+    "date": "February 20, 2026",
+    "rating": 5,
+    "text": "This car is amazing! Naree is pretty responsive, and do her best to make the trip incredible!",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3563398",
+    "reviewerFirstName": "Robert",
+    "date": "February 20, 2026",
+    "rating": 5,
+    "text": "Great car, awesome FSD. Very responsive communication.",
+    "vehicleName": "Blaze",
+    "photo": "images/3563398_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Pretsky",
+    "date": "February 19, 2026",
+    "rating": 5,
+    "text": "Naree was an amazing host! The process was super smooth, and the location details and instructions were very clear and detailed. Highly recommend!",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Jordan",
+    "date": "February 18, 2026",
+    "rating": 5,
+    "text": "Easy pickup and nice vehicle",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "GABRIELE",
+    "date": "February 16, 2026",
+    "rating": 5,
+    "text": "Everything perfect! Thanks",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Dominique",
+    "date": "February 15, 2026",
+    "rating": 5,
+    "text": "Very helpful, amazing car and very understanding",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "2587824",
+    "reviewerFirstName": "Lisa",
+    "date": "February 9, 2026",
+    "rating": 5,
+    "text": "Great car, great communication",
+    "vehicleName": "Merlin",
+    "photo": "images/2587824_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Sunny",
+    "date": "February 9, 2026",
+    "rating": 5,
+    "text": "Great car.",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "3307398",
+    "reviewerFirstName": "Steve",
+    "date": "February 9, 2026",
+    "rating": 5,
+    "text": "We enjoyed the Tesla with self driving technology. Great host and communication.",
+    "vehicleName": "Ruby",
+    "photo": "images/3307398_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Alex",
+    "date": "February 9, 2026",
+    "rating": 5,
+    "text": "Car was great pickup was easy.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "Adam",
+    "date": "February 2, 2026",
+    "rating": 5,
+    "text": "Host and car were phenomenal! Super clean and so much fun to drive. Would definitely recommend!",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Roger",
+    "date": "January 28, 2026",
+    "rating": 5,
+    "text": "Phenomenal host! Highly recommend",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "francisco",
+    "date": "January 25, 2026",
+    "rating": 5,
+    "text": "Great comms all the time, perfect car and service",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3531702",
+    "reviewerFirstName": "Eric",
+    "date": "January 24, 2026",
+    "rating": 5,
+    "text": "Wonderful car and great host, will definitely try to book this one again next time I am in Orlando.",
+    "vehicleName": "Goose",
+    "photo": "images/3531702_1.jpg"
+  },
+  {
+    "listingId": "3506536",
+    "reviewerFirstName": "AARON",
+    "date": "January 21, 2026",
+    "rating": 5,
+    "text": "As someone who uses Turo a couple dozen times a year this was at the top of the range with an amazing experience! Extremely communicative, beautifully clean and taken care of car, great host. Truly a great experience! Thank you very much we will be back and hope the car is available \ud83d\ude4f",
+    "vehicleName": "Frosty",
+    "photo": "images/3506536_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Zaldy",
+    "date": "January 16, 2026",
+    "rating": 5,
+    "text": "\u2b50\u2b50\u2b50\u2b50\u2b50Amazing experience with this Tesla Model Y! The car was spotless, smooth to drive, and incredibly fun. Everything worked perfectly, and the ride was comfortable and effortless from start to finish. I really enjoyed the whole experience and it exceeded my expectations. Will definitely book again and can\u2019t wait to do so in the near future. Highly recommended!",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3307415",
+    "reviewerFirstName": "Meilech",
+    "date": "January 14, 2026",
+    "rating": 5,
+    "text": "Great car, and great host. Highly recommend.",
+    "vehicleName": "Rooster",
+    "photo": "images/3307415_1.jpg"
+  },
+  {
+    "listingId": "3307368",
+    "reviewerFirstName": "Alvin",
+    "date": "January 11, 2026",
+    "rating": 5,
+    "text": "The best car i rent in my life!",
+    "vehicleName": "Casper",
+    "photo": "images/3307368_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Shane",
+    "date": "January 9, 2026",
+    "rating": 5,
+    "text": "car was great brand new enjoyable a lot of good features full self driving is a plus when traveling from into the airport range was limited at 20% and 80% which only left 60% use which is about 180 miles not great for long car trips, but other than that, really enjoyed the vehicle great for a short commutes",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Pablo",
+    "date": "January 5, 2026",
+    "rating": 5,
+    "text": "Great experience. Clean nd perfect car conditions. Naree, the host very clear with everything.",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Jose",
+    "date": "December 29, 2025",
+    "rating": 5,
+    "text": "Great love the car",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Ashley",
+    "date": "November 28, 2025",
+    "rating": 5,
+    "text": "An amazing trip with a great host! Our family enjoyed everything about the truck. The host was a great communicator and had all the answers!",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  },
+  {
+    "listingId": "3307383",
+    "reviewerFirstName": "Kimberly",
+    "date": "November 28, 2025",
+    "rating": 5,
+    "text": "Car and service were excellent. Will definitely be back again!",
+    "vehicleName": "Storm",
+    "photo": "images/3307383_1.jpg"
+  },
+  {
+    "listingId": "2740306",
+    "reviewerFirstName": "Roger",
+    "date": "November 9, 2025",
+    "rating": 5,
+    "text": "Everything was greattttt",
+    "vehicleName": "Maverick",
+    "photo": "images/2740306_1.jpg"
+  }
+]
