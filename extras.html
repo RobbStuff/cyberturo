@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache">
 <title>CyberTuro — Our Extras</title>
 <meta name="description" content="Optional extras available with the CyberTuro Tesla fleet on Turo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -649,7 +650,7 @@
   window.addEventListener('resize', onViewportChange);
   window.addEventListener('orientationchange', onViewportChange);
 
-  fetch('extras.json', { cache: 'no-store' })
+  fetch('extras.json?v=' + Date.now(), { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : null))
     .then((data) => {
       if (!data) showGlobalPlaceholder();

@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
 <title>CyberTuro — Our Reviews</title>
 <meta name="description" content="CyberTuro guest reviews for our Tesla Cybertruck and Model Y fleet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -575,7 +574,7 @@
     window.visualViewport.addEventListener('resize', onViewportChange);
   }
 
-  fetch('reviews.json?v=trunc-20', { cache: 'no-store' })
+  fetch('reviews.json?v=' + Date.now(), { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : []))
     .then(render)
     .catch(showPlaceholder);
