@@ -17,6 +17,7 @@
     --neon:#39ff14;
     --cyan:#00e5ff;
     --radius:18px;
+    --site-header-h:2.75rem;
   }
   * { box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -35,16 +36,30 @@
     background-size:48px 48px, 48px 48px, 100% 4px, auto, auto, auto;
     min-height:100vh;
   }
+  .site-header {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:300;
+    height:var(--site-header-h);
+    display:flex;
+    align-items:center;
+    box-sizing:border-box;
+    padding:0 1rem;
+    background:var(--bg0);
+    border-bottom:1px solid rgba(57,255,20,.12);
+  }
   .wrap {
     width:min(900px, calc(100% - 2rem));
     margin:0 auto;
-    padding:2.5rem 0 4rem;
+    padding:var(--site-header-h) 0 4rem;
     position:relative;
     z-index:1;
   }
   .hero {
     text-align:center;
-    padding:1.4rem 1.2rem 1.8rem;
+    padding:0 1.2rem 1.8rem;
     position:relative;
   }
   .top-nav {
@@ -54,7 +69,7 @@
     justify-content:space-between;
     gap:0;
     width:100%;
-    margin:0 0 .95rem;
+    margin:0;
     padding:0;
     white-space:nowrap;
     font-family: Orbitron, Rajdhani, sans-serif;
@@ -212,13 +227,14 @@
 </style>
 </head>
 <body>
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Site">
+      <a href="index.html">Fleet</a><span class="dot" aria-hidden="true">.</span><a href="reviews.html">Reviews</a><span class="dot" aria-hidden="true">.</span><a href="extras.html">Extras</a><span class="dot" aria-hidden="true">.</span><a href="#" id="login-link">Login</a>
+    </nav>
+  </header>
   <div class="wrap">
     <header class="hero">
-            <nav class="top-nav" aria-label="Site">
-        <a href="index.html">Fleet</a><span class="dot" aria-hidden="true">.</span><a href="reviews.html">Reviews</a><span class="dot" aria-hidden="true">.</span><a href="extras.html">Extras</a><span class="dot" aria-hidden="true">.</span><a href="#" id="login-link">Login</a>
-      </nav>
       <a class="brand" href="index.html">CyberTuro</a>
-      </div>
       <h1>Our Reviews</h1>
       <div class="hero-links">
         <a class="back-link" href="index.html">← Back to our fleet</a>
