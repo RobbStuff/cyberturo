@@ -145,18 +145,26 @@
     text-shadow:0 0 8px rgba(57,255,20,.55), 0 0 24px rgba(57,255,20,.25), 0 0 2px rgba(0,229,255,.35);
   }
   .back-link {
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     margin:0 auto 1.6rem;
-    color:var(--cyan);
+    color:#ff8c1a;
     text-decoration:none;
-    font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.8rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    text-shadow:0 0 8px rgba(0,229,255,.35);
+    font-size:clamp(.72rem, 2.4vw, .88rem);
+    font-weight:700;
+    line-height:1;
+    -webkit-tap-highlight-color: transparent;
   }
   .back-link:hover,
-  .back-link:focus-visible { color:var(--neon); outline:none; }
+  .back-link:focus-visible {
+    color:#ffb35a;
+    outline:none;
+  }
+  .back-link:focus-visible {
+    outline:2px solid #ff8c1a;
+    outline-offset:2px;
+  }
   .hero-links { text-align:center; }
   .fleet-extras {
     display:flex;
@@ -363,7 +371,7 @@
       <a class="brand" href="index.html">CyberTuro</a>
       <h1>Our Extras</h1>
       <div class="hero-links">
-        <a class="back-link" href="index.html">← Back to our fleet</a>
+        <a class="back-link" href="index.html" aria-label="Back to our fleet">‹</a>
       </div>
     </header>
 
