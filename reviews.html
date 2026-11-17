@@ -349,15 +349,15 @@
 
   function reviewTextHtml(fullText) {
     const words = wordsOf(fullText);
-    const quotedFull = '“' + String(fullText || '').trim() + '”';
+    const full = String(fullText || '').trim();
     if (words.length <= 12) {
-      return '<p class="review-text">' + escapeHtml(quotedFull) + '</p>';
+      return '<p class="review-text">“' + escapeHtml(full) + '”</p>';
     }
-    const quotedPreview = '“' + words.slice(0, 12).join(' ') + '…”';
+    const preview = words.slice(0, 12).join(' ') + '…';
     return (
-      '<p class="review-text" data-full="' + encodeURIComponent(quotedFull) + '" data-preview="' + encodeURIComponent(quotedPreview) + '" data-expanded="false">' +
-        '<span class="review-text-body">' + escapeHtml(quotedPreview) + '</span> ' +
-        '<button type="button" class="review-more" aria-expanded="false">more</button>' +
+      '<p class="review-text" data-full="' + encodeURIComponent(full) + '" data-preview="' + encodeURIComponent(preview) + '" data-expanded="false">' +
+        '“<span class="review-text-body">' + escapeHtml(preview) + '</span> ' +
+        '<button type="button" class="review-more" aria-expanded="false">more</button>”' +
       '</p>'
     );
   }
