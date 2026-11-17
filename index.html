@@ -131,6 +131,29 @@
     color:#ff8c1a;
     text-shadow:0 0 10px rgba(255,140,26,.45);
     line-height:1.4;
+    text-decoration:none;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:color .2s ease, text-shadow .2s ease, filter .2s ease;
+  }
+  .fleet-note:link,
+  .fleet-note:visited {
+    color:#ff8c1a;
+    text-decoration:none;
+  }
+  .fleet-note:hover,
+  .fleet-note:focus-visible {
+    color:#ff8c1a;
+    text-decoration:none;
+    filter:brightness(1.15);
+    outline:none;
+  }
+  .fleet-note:focus-visible {
+    outline:2px solid #ff8c1a;
+    outline-offset:3px;
+  }
+  #model-y-l {
+    scroll-margin-top:var(--site-header-offset);
   }
   .brand {
     display:block;
@@ -513,7 +536,7 @@
   <div class="wrap">
     <header class="hero">
       <div class="brand">CyberTuro</div>
-      <p class="fleet-note">*NEW* Model Y L - 6 Seats!</p>
+      <a class="fleet-note" href="#model-y-l">*NEW* Model Y L - 6 Seats!</a>
       <h1>Here Is Our Fleet:</h1>
     </header>
     <main class="grid">
