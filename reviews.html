@@ -204,15 +204,11 @@
     min-width:0;
     min-height:100%;
   }
-  .review-footer {
-    margin-top:auto;
-    padding-top:.35rem;
-  }
   .review-media {
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:.3rem;
+    gap:.25rem;
     width:68px;
   }
   .review-photo {
@@ -259,18 +255,28 @@
     color:#efffef;
   }
   .review-attribution {
-    margin:.35rem 0 0;
-    font-size:.9rem;
+    margin:.1rem 0 0;
+    width:100%;
+    max-width:68px;
+    font-size:.62rem;
     font-style:italic;
-    line-height:1.3;
+    line-height:1.2;
     color:var(--muted);
+    text-align:center;
+    overflow-wrap:anywhere;
+    word-break:break-word;
   }
   .review-date {
-    margin:.15rem 0 0;
-    font-size:.8rem;
+    margin:0;
+    width:100%;
+    max-width:68px;
+    font-size:.58rem;
     font-style:normal;
-    line-height:1.3;
+    line-height:1.2;
     color:var(--muted);
+    text-align:center;
+    overflow-wrap:anywhere;
+    word-break:break-word;
   }
   .review-more {
     display:inline;
@@ -380,9 +386,13 @@
 
   function formatDate(value) {
     if (!value) return '';
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return String(value);
-    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const s = String(value).trim();
+    // Prefer M/D/YYYY from YYYY-MM-DD without timezone shift.
+    const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (iso) return Number(iso[2]) + '/' + Number(iso[3]) + '/' + iso[1];
+    const d = new Date(s);
+    if (Number.isNaN(d.getTime())) return s;
+    return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
   }
 
   function showPlaceholder() {
@@ -492,9 +502,6 @@
       const dateLine = when
         ? ('<p class="review-date">' + escapeHtml(when) + '</p>')
         : '';
-      const footer = (attribution || dateLine)
-        ? ('<div class="review-footer">' + attribution + dateLine + '</div>')
-        : '';
       return (
         '<article class="review">' +
           '<div class="review-media">' +
@@ -502,6 +509,8 @@
               ? '<img class="review-photo" src="' + escapeHtml(img) + '" alt="' + escapeHtml(name) + '" loading="lazy">'
               : '<div class="review-photo" aria-hidden="true"></div>') +
             '<div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>' +
+            attribution +
+            dateLine +
           '</div>' +
           '<div class="review-body">' +
             '<div class="review-meta">' +
@@ -509,7 +518,6 @@
               '<span>' + escapeHtml(who) + '</span>' +
             '</div>' +
             reviewTextHtml(r.text) +
-            footer +
           '</div>' +
         '</article>'
       );
