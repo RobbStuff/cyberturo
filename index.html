@@ -185,30 +185,6 @@
     color:#f0fff0;
     text-shadow:0 0 8px rgba(57,255,20,.55), 0 0 24px rgba(57,255,20,.25), 0 0 2px rgba(0,229,255,.35);
   }
-  .back-link {
-    display:inline-flex;
-    align-items:center;
-    gap:.28rem;
-    margin:0 0 .55rem;
-    color:var(--neon);
-    text-decoration:none;
-    font-family: Orbitron, Rajdhani, sans-serif;
-    font-size:.8rem;
-    font-weight:700;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    line-height:1.2;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .back-link:hover,
-  .back-link:focus-visible {
-    color:#b8ff7a;
-    outline:none;
-  }
-  .back-link:focus-visible {
-    outline:2px solid var(--neon);
-    outline-offset:2px;
-  }
   .grid { display:grid; grid-template-columns:1fr; gap:1.4rem; }
   @media (min-width:720px) {
     .grid { grid-template-columns:repeat(2, minmax(0,1fr)); gap:1.6rem; }
@@ -561,7 +537,6 @@
       <a class="fleet-note" href="#model-y-l">*NEW* Model Y L - 6 Seats!</a>
       <h1>Here Is Our Fleet:</h1>
     </header>
-    <a class="back-link" href="index.html" aria-label="Back to our fleet">‹ Back</a>
     <main class="grid">
     <!--
       Custom names by card display order (data-listing-id → name):
@@ -1046,15 +1021,6 @@
   </div>
 <script>
 (function() {
-  document.querySelector('.back-link')?.addEventListener('click', function(e) {
-    e.preventDefault();
-    let sameSite = false;
-    try {
-      if (document.referrer) sameSite = new URL(document.referrer).origin === location.origin;
-    } catch (_) {}
-    if (sameSite) { history.back(); return; }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
   document.querySelectorAll('.spec-toggle').forEach((btn) => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));
