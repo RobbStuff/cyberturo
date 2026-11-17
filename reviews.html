@@ -172,13 +172,17 @@
     outline-offset:2px;
   }
   .reviews {
-    display:flex;
-    flex-direction:column;
-    gap:1.25rem;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:1rem;
+    align-items:start;
+  }
+  .reviews > .placeholder {
+    grid-column:1 / -1;
   }
   .review {
     display:grid;
-    grid-template-columns:68px 1fr;
+    grid-template-columns:68px minmax(0, 1fr);
     gap:.85rem;
     align-items:start;
     padding:1rem;
@@ -186,6 +190,7 @@
     border:1px solid rgba(57,255,20,.28);
     background:linear-gradient(180deg, rgba(57,255,20,.05), rgba(0,0,0,.28));
     box-shadow:0 0 18px rgba(57,255,20,.08);
+    min-width:0;
   }
   .review-media {
     display:flex;
@@ -215,6 +220,21 @@
     color:#ffd54a;
     text-shadow:0 0 8px rgba(255,213,74,.35);
   }
+  @media (max-width:767px) {
+    .reviews { gap:.75rem; }
+    .review {
+      grid-template-columns:48px minmax(0, 1fr);
+      gap:.55rem;
+      padding:.75rem .65rem;
+    }
+    .review-media,
+    .review-photo,
+    .review-stars { width:48px; }
+    .review-photo { height:48px; border-radius:8px; }
+    .review-stars { font-size:.5rem; }
+    .review-text { font-size:.98rem; }
+    .review-meta { font-size:.82rem; }
+  }
   .review-meta {
     display:flex;
     flex-wrap:wrap;
@@ -236,6 +256,20 @@
     font-size:1.08rem;
     line-height:1.45;
     color:#efffef;
+  }
+  .review-attribution {
+    margin:.35rem 0 0;
+    font-size:.9rem;
+    font-style:italic;
+    line-height:1.3;
+    color:var(--muted);
+  }
+  .review-date {
+    margin:.15rem 0 0;
+    font-size:.8rem;
+    font-style:normal;
+    line-height:1.3;
+    color:var(--muted);
   }
   .review-more {
     display:inline;
@@ -347,7 +381,7 @@
     if (!value) return '';
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return String(value);
-    return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
   function showPlaceholder() {
@@ -425,7 +459,14 @@
       const name = NAMES[id] || r.vehicleName || 'Fleet vehicle';
       const img = r.photo || (id ? ('images/' + id + '_1.jpg') : '');
       const who = r.reviewerFirstName || r.reviewer || 'Guest';
+      const firstName = String(r.reviewerFirstName || '').trim();
       const when = formatDate(r.date);
+      const attribution = firstName
+        ? ('<p class="review-attribution">— ' + escapeHtml(firstName) + '</p>')
+        : '';
+      const dateLine = when
+        ? ('<p class="review-date">' + escapeHtml(when) + '</p>')
+        : '';
       return (
         '<article class="review">' +
           '<div class="review-media">' +
@@ -437,9 +478,11 @@
           '<div>' +
             '<div class="review-meta">' +
               '<span class="review-vehicle">' + escapeHtml(name) + '</span>' +
-              '<span>' + escapeHtml(who) + (when ? ' · ' + escapeHtml(when) : '') + '</span>' +
+              '<span>' + escapeHtml(who) + '</span>' +
             '</div>' +
             reviewTextHtml(r.text) +
+            attribution +
+            dateLine +
           '</div>' +
         '</article>'
       );
