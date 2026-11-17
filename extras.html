@@ -189,13 +189,9 @@
     margin:.15rem 0 .7rem;
     font-family: Orbitron, Rajdhani, sans-serif;
     font-size:.9rem;
-    font-weight:600;
-    letter-spacing:.03em;
-    color:var(--muted);
-  }
-  .vehicle-model .model-part {
-    color:#ff8c1a;
     font-weight:700;
+    letter-spacing:.03em;
+    color:#ff8c1a;
   }
   .extras-note {
     margin:0 0 .55rem;
@@ -326,13 +322,6 @@
   }
 
 
-  function formatModelTitle(model) {
-    const s = String(model || '');
-    const m = s.match(/^(\d{4} Tesla )(Model Y L|Model Y|Cybertruck)$/);
-    if (!m) return escapeHtml(s);
-    return escapeHtml(m[1]) + '<span class="model-part">' + escapeHtml(m[2]) + '</span>';
-  }
-
   function formatPrice(price, unit) {
     if (price == null || price === '') return '';
     const n = Number(price);
@@ -427,7 +416,7 @@
           '<img class="vehicle-photo" src="' + escapeHtml(v.photo || ('images/' + v.listingId + '_1.jpg')) + '" alt="' + escapeHtml(v.name || '') + '" loading="lazy">' +
           '<div>' +
             '<h2 class="vehicle-name">“' + escapeHtml(v.name || '') + '”</h2>' +
-            '<p class="vehicle-model">' + formatModelTitle(v.model || '') + '</p>' +
+            '<p class="vehicle-model">' + escapeHtml(v.model || '') + '</p>' +
             note +
             listHtml +
           '</div>' +
