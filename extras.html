@@ -147,25 +147,27 @@
   .back-link {
     display:inline-flex;
     align-items:center;
-    justify-content:center;
-    margin:0 auto 1.6rem;
-    color:#ff8c1a;
+    gap:.28rem;
+    margin:0 0 .55rem;
+    color:var(--neon);
     text-decoration:none;
-    font-size:clamp(.72rem, 2.4vw, .88rem);
+    font-family: Orbitron, Rajdhani, sans-serif;
+    font-size:.8rem;
     font-weight:700;
-    line-height:1;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    line-height:1.2;
     -webkit-tap-highlight-color: transparent;
   }
   .back-link:hover,
   .back-link:focus-visible {
-    color:#ffb35a;
+    color:#b8ff7a;
     outline:none;
   }
   .back-link:focus-visible {
-    outline:2px solid #ff8c1a;
+    outline:2px solid var(--neon);
     outline-offset:2px;
   }
-  .hero-links { text-align:center; }
   .fleet-extras {
     display:flex;
     flex-direction:column;
@@ -370,10 +372,9 @@
     <header class="hero">
       <a class="brand" href="index.html">CyberTuro</a>
       <h1>Our Extras</h1>
-      <div class="hero-links">
-        <a class="back-link" href="index.html" aria-label="Back to our fleet">‹</a>
-      </div>
     </header>
+
+    <a class="back-link" href="index.html" aria-label="Back to our fleet">‹ Back</a>
 
     <main id="extras-root" class="fleet-extras" aria-live="polite">
       <div class="placeholder">
@@ -390,6 +391,15 @@
   </div>
 <script>
 (function() {
+  document.querySelector('.back-link')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    let sameSite = false;
+    try {
+      if (document.referrer) sameSite = new URL(document.referrer).origin === location.origin;
+    } catch (_) {}
+    if (sameSite) { history.back(); return; }
+    location.href = 'index.html';
+  });
 
   function escapeHtml(s) {
     return String(s)
